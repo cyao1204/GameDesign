@@ -1,0 +1,17 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code local settings (personal, not shared)
+.claude/settings.local.json
+
+# Scratch / temp
+*.tmp
+*.bak
