@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-30 (session 4, in progress) |
+| **Last updated** | 2026-10-30 (session 4) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.3 (0.4 pending: bumped at the end of session 4) |
+| **Version** | 0.4 |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -91,6 +91,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Raising, lowering and transferring affliction are abilities of certain elements, not universal.
 - **[DECIDED]** Transfer is limited to a few elements and is not a central theme. *(Supersedes session 1's "transfer is part of the core.")*
 - **[DECIDED]** Transferred affliction raises one of the target's existing element meters.
+- **[DEFERRED]** Which meter it raises when the target has two elements (session 4). Deferred along with Chaos, which likely owns transfer.
 - **[DECIDED]** **Zone boundaries are fixed and the same for everyone** (session 4, for the prototype). Both players know exactly what a meter value means.
   - Rejected: boundaries as a share of each player's hidden health. With public meters, this would reveal hidden health the moment someone crossed a boundary.
   - **[DEFERRED]** Elements shifting their own boundaries (for example, a wider Calm zone for the Defensive element, or odd zones for Chaos). A later tool for element personality.
@@ -237,11 +238,10 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 - [ ] Two starter elements and their 6–8 spells each. *Session 4: archetypes decided (one offensive, one defensive); roles and spells still open.*
 - [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction. *Session 4: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; the Offensive element can't lower its own affliction. Still open: exact numbers and the Defensive element's reduction spells.*
 - [x] Threshold placement: fixed boundaries, the same for everyone (session 4). Element-shifted boundaries deferred.
-- [x] Spells per turn: 2 or 3, exact value to tune (session 4).
+- [x] Spells per turn: up to 2–3, exact value to tune; empty slots rest (session 4).
 - [x] Health vs. spellbook-size formula: health = pool − all spells (active + reserve), fixed rate (session 4). Pool size and min/max book size still open.
 - [x] Deckbuilding room: prototype at 8 spells per element and 4–5 active slots; 12+ per element for the full game (session 4).
 - [x] Target match length: 8–12 turns, TENTATIVE (session 4). Phase-based shaping deferred.
-- [ ] Which meter transferred affliction enters when the target has two elements (caster's choice, target's choice, or fixed). *[PROPOSED] Defer along with Chaos, since transfer likely belongs to Chaos and the starter pair doesn't use it.*
 - [x] Simultaneous 0-health outcome: lower total affliction wins, then a draw (session 4).
 
 **Must answer before development**
@@ -252,10 +252,13 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 
 **Deferred**
 - Defensive spells, full element roster, swap cost and triggers, transformations beyond one example, progression, art, audio.
+- Chaos element design, and which meter transferred affliction enters (session 4).
 
 ## 11. Next steps
 
-- [ ] Answer the "before prototyping" questions in §10.
+- [ ] Design the starter spells: 8 per element (Offensive about 6/0/2, Defensive about 3/3/2), each with affliction cost, cooldown and effect. Include 1–2 Offensive finishers.
+- [ ] Set first-pass numbers: health pool, zone boundaries, Overloaded growth and burn.
+- [ ] Pacing check with a quick spreadsheet or script against the 8–12 turn target (proposed).
 - [ ] Paper prototype (or throwaway digital one) of the core duel: cast, cooldown, affliction, hidden health. No reserve or swaps yet.
 - [ ] Play it with speed-category resolution, at 2 and at 3 spells per turn.
 - [ ] Watch or play *Mage Wars* and *Wizards of the Grimoire* (on Board Game Arena).
@@ -268,7 +271,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.1 | 2026-10-25 | 1 | Concept: magic harms the caster, no mana, empowerment and transformation, transfer. Fantasy setting. "Body is the board" dropped. Side-scroller deferred. |
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
-| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. Decided: the starter elements are one offensive-oriented and one defensive-oriented element (placeholder names; Fire + Frost rejected as cliché). Decided: Chaos is the third element, replacing the Shadow idea; its role is open. Decided: elements differ by their mix of spell roles (attack, defensive, utility), which are roles and not speed categories. Tentative mixes: Offensive 6/0/2, Defensive 3/3/2. Decided: Chaos direction is rule-breaking; candidate ideas (transfer, max-affliction fuel, death-defying) deferred. Decided: health = pool − all spells in the book (active + reserve) at a fixed rate. Decided: affliction per cast scales with spell power. Terms: "prepared" replaced by spellbook / active / reserve. Decided: deckbuilding room, with the prototype at 8 spells per element and 4–5 active slots (tentative count) and the full game at 12+ spells per element. Decided: 0–20 affliction meter with Calm / Charged / Overloaded zones (numbers tentative). Decided: the Offensive element can't lower its own affliction and gets big rewards at high affliction (form open). Proposed: a pacing simulation before paper playtesting. Decided: Offensive rewards are a mix led by finisher unlocks, plus some empowered spells and an Overloaded transformation. Decided: affliction meters are public; open information is limited to affliction meters and every cast spell (self-targeted ones included). Decided: zone boundaries are fixed and the same for everyone; boundaries based on hidden health rejected; element-shifted boundaries deferred. Decided: on a double knockout, lower total affliction wins, then a draw (fallback: more health left wins). Proposed: defer the transfer-meter question along with Chaos. |
+| 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
 
 ## Appendix: glossary
 
