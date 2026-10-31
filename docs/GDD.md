@@ -106,11 +106,10 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   - Backup if matches feel slow or predictable: **burnout**. Hitting max affliction costs a big chunk of health, then resets the meter and ends any transformation (like an overheated weapon in *Halo*).
   - ⚠ (session 5) Burnout's reset lowers the meter, which conflicts with the no-lowering rule below. Keep it as the one exception (paid for in health), or drop the backup?
 - **[DECIDED]** **Affliction can never be lowered or cleansed** (session 5), by any element, spell or rest. It is the price of casting; if it could be removed, the price wouldn't be real. *Supersedes the earlier "lowering is an ability of certain elements".* Element tools may instead **slow** how fast affliction builds or **soften its consequences** (see the Defensive element, §6).
-- **[DECIDED]** Raising and transferring affliction are abilities of certain elements, not universal.
-  - ⚠ (session 5) Does transfer remove affliction from the caster? If it does, it is a form of lowering. If not, transfer only adds affliction to the target.
-- **[DECIDED]** Transfer is limited to a few elements and is not a central theme. *(Supersedes session 1's "transfer is part of the core.")*
-- **[DECIDED]** Transferred affliction raises one of the target's existing element meters.
-- **[DEFERRED]** Which meter it raises when the target has two elements (session 4). Deferred along with Chaos, which likely owns transfer.
+- **[DECIDED]** **No transfer; some elements raise the opponent's affliction instead** (session 5). Raising an opponent's affliction is part of certain elements' offence. The caster's own affliction is never moved or removed, and the cast still adds affliction to the caster as usual (§5.1). *Supersedes "transfer" (moving the caster's affliction to the opponent), which would have been a form of lowering.*
+- **[DECIDED]** Raising the opponent's affliction is limited to a few elements and is not a central theme. *(Carried over from the session 2 decision on transfer; supersedes session 1's "transfer is part of the core.")*
+- **[DECIDED]** It raises one of the target's existing element meters.
+- **[DEFERRED]** Which meter it raises when the target has two elements (session 4). Deferred along with Chaos, a likely owner of this ability.
 - **[DECIDED]** **Zone boundaries are fixed and the same for everyone** (session 4, for the prototype). Both players know exactly what a meter value means.
   - Rejected: boundaries as a share of each player's hidden health. With public meters, this would reveal hidden health the moment someone crossed a boundary.
   - **[DEFERRED]** Elements shifting their own boundaries (for example, a wider Calm zone for the Defensive element, or odd zones for Chaos). A later tool for element personality.
@@ -158,7 +157,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[TENTATIVE]** **Secret choice, resolved by speed category** (session 4). Both players pick in secret, then reveal. Spells resolve in category order, not by a per-spell speed number:
   1. **Defensive** (fastest): cast on yourself, so they don't need to travel. Both players' defensive spells resolve together and don't interact with each other.
   2. **Offensive** (slowest): always resolve last. If both players cast offensive spells, they resolve at the same time and don't interact with each other.
-- **[DECIDED]** Speed is set by **target** (session 4): a spell targeting yourself is fast (defensive step), a spell targeting the opponent is slow (offensive step). No separate utility category is needed. A self-shield is fast; transfer and debuffs are slow. *Watch:* a fast spell that prevents Burn (if adopted, §6) resolves before the enemy's attack lands. That could be good drama or too safe.
+- **[DECIDED]** Speed is set by **target** (session 4): a spell targeting yourself is fast (defensive step), a spell targeting the opponent is slow (offensive step). No separate utility category is needed. A self-shield is fast; raising the opponent's affliction and debuffs are slow. *Watch:* a fast spell that prevents Burn (if adopted, §6) resolves before the enemy's attack lands. That could be good drama or too safe.
 - **[DECIDED]** Test only the simultaneous (speed-category) structure. **Alternating** turns are dropped, since spells for them would be designed completely differently.
 - Resolved ⚠ from session 2 (sequential vs. simultaneous): the speed-category hybrid replaces both pure options.
 - Consequence: defence beats offence on timing, so classic reactive spells (reflect, counter) can work as fast defensive spells. Guessing wrong still costs you the turn plus the affliction.
@@ -175,11 +174,11 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[DEFERRED]** Element names. Placeholders for now: **Offensive element** and **Defensive element**.
 - **[DECIDED]** **Chaos** is the third element, after the starter pair (session 4). It replaces the Shadow/information idea. Name may change.
   - **[DECIDED]** Direction: **rule-breaking**. Chaos bends the game's normal rules.
-  - **[DEFERRED]** Candidate ideas, to explore after the starter pair works: Chaos is the element that owns affliction **transfer**; spells that push affliction to the maximum and then spend it as fuel; a **death-defying** mechanic.
+  - **[DEFERRED]** Candidate ideas, to explore after the starter pair works: Chaos is the element that **raises the opponent's affliction**; spells that push affliction to the maximum and then spend it as fuel; a **death-defying** mechanic.
   - Watch: rule-breaking elements are the hardest to balance and to teach. Each exception adds to the complexity budget (§9).
 - **[DECIDED]** **No finishers** (session 5). There is no special class of match-ending spells. Spell power is a sliding scale: some spells are stronger and some weaker, and power is priced by affliction and cooldown (§5.1).
 - **[DECIDED]** Elements differ by their **mix of spell roles**, not by which roles they're allowed (session 4). A defensive element still has damage spells; it just has fewer of them.
-- **Spell roles:** *attack* (damages the opponent), *defensive* (protects the caster), *utility* (anything else, such as cooldown tricks or transfer). These are **roles, not speed categories**: speed still comes only from the target (§5.5). For example, a self-targeted cooldown trick is a fast utility spell and a transfer is a slow one.
+- **Spell roles:** *attack* (damages the opponent), *defensive* (protects the caster), *utility* (anything else, such as cooldown tricks or raising the opponent's affliction). These are **roles, not speed categories**: speed still comes only from the target (§5.5). For example, a self-targeted cooldown trick is a fast utility spell and raising the opponent's affliction is a slow one.
 - **[TENTATIVE]** Example mixes for 8-spell elements:
 
   | Element | Attack | Defensive | Utility |
@@ -208,7 +207,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 **Defensive element under the no-lowering rule** (session 5). **[OPEN]** (Q-018) Chris's candidate ideas:
 - Its spells build affliction **much more slowly**.
 - Some spells **prevent Burn as a secondary effect** while the caster is Overloaded. The meter still rises; only the health loss is softened.
-| Chaos | Rule-breaking | [DEFERRED] | Transfer? Max-affliction fuel? Death-defying? | third element, decided |
+| Chaos | Rule-breaking | [DEFERRED] | Raises the opponent's affliction? Max-affliction fuel? Death-defying? | third element, decided |
 | Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
 ## 7. Core loop (draft)
@@ -288,7 +287,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 
 **Deferred** (not questions yet)
 - Defensive spells, full element roster, swap cost and triggers, transformations beyond one example, progression, art, audio.
-- Chaos element design, and which meter transferred affliction enters (session 4).
+- Chaos element design, and which meter is raised when a spell raises a two-element opponent's affliction (session 4).
 
 ## 11. Next steps
 
@@ -310,7 +309,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup, no rule changes: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element candidates: slower build-up, Burn prevention while Overloaded (Q-018); ⚠ burnout reset and transfer flagged. |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup, no rule changes: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element candidates: slower build-up, Burn prevention while Overloaded (Q-018); ⚠ burnout reset flagged. Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
 
 ## Appendix: glossary (term registry)
 
