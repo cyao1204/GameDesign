@@ -7,7 +7,7 @@
 | **Designer** | Chris (solo, building with Claude) |
 | **Last updated** | 2026-10-30 (session 4) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.4 |
+| **Version** | 0.5 |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -61,7 +61,9 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Every cast adds affliction of the spell's element to the caster, whatever else the spell does.
 - **[DECIDED]** Spells deal health damage directly.
 - **[DECIDED]** After a cast, the spell goes on **cooldown** (a wait of one or more turns before it can be used again, like abilities in *Overwatch*).
-- **[DECIDED]** Cap on spells per turn. Value [OPEN]: 1, 2 or 3. Suggested prototype value: 1.
+- **[DECIDED]** Cap on spells per turn: **2 or 3** (session 4). Exact value [TENTATIVE], to tune in playtesting.
+- **[PROPOSED]** The cap is "up to N": casting fewer spells means less affliction, which makes how many to cast each turn part of the push-your-luck bet.
+- Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the prepared-spell count must allow for it.
 - **[DECIDED]** **Overcasting** (casting a spell before its cooldown ends) belongs to one element only, for example lightning.
 
 ### 5.2 Health
@@ -104,12 +106,11 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[TENTATIVE]** **Secret choice, resolved by speed category** (session 4). Both players pick in secret, then reveal. Spells resolve in category order, not by a per-spell speed number:
   1. **Defensive** (fastest): cast on yourself, so they don't need to travel. Both players' defensive spells resolve together and don't interact with each other.
   2. **Offensive** (slowest): always resolve last. If both players cast offensive spells, they resolve at the same time and don't interact with each other.
-- **[DEFERRED]** A third **utility** category. Chris isn't sure it's needed; explore later.
-- **[PROPOSED]** Sort spells by **target** instead of by theme: a spell targeting yourself is fast, a spell targeting the opponent is slow. This removes the need for a utility category. A self-cleanse becomes fast; transfer and debuffs become slow. *Trade-off:* a fast cleanse can escape a burn before the enemy's attack lands. That could be good drama or too safe.
-- **[OPEN]** Keep **alternating** turns (like *Hearthstone*) as a quick comparison test, or drop it?
+- **[DECIDED]** Speed is set by **target** (session 4): a spell targeting yourself is fast (defensive step), a spell targeting the opponent is slow (offensive step). No separate utility category is needed. A self-cleanse is fast; transfer and debuffs are slow. *Watch:* a fast cleanse can escape a burn before the enemy's attack lands. That could be good drama or too safe.
+- **[DECIDED]** Test only the simultaneous (speed-category) structure. **Alternating** turns are dropped, since spells for them would be designed completely differently.
 - Resolved ⚠ from session 2 (sequential vs. simultaneous): the speed-category hybrid replaces both pure options.
 - Consequence: defence beats offence on timing, so classic reactive spells (reflect, counter) can work as fast defensive spells. Guessing wrong still costs you the turn plus the affliction.
-- Watch: at 1 spell per turn, each turn may shrink to "attack or defend?" (close to rock-paper-scissors). It needs varied defensive options, or more than 1 spell per turn (see §5.1).
+- Watch: each turn could shrink to "attack or defend?" (close to rock-paper-scissors). Casting 2–3 spells per turn (§5.1) and varied defensive options should prevent this.
 - **[OPEN]** What happens when both players reach 0 health on the same turn (still possible, since offensive spells resolve together).
 
 ## 6. Elements
@@ -167,11 +168,11 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 ## 10. Open questions
 
 **Must answer before prototyping**
-- [x] Turn structure: secret choice resolved by speed category (TENTATIVE, session 4). Still open: keep alternating as a comparison test?
+- [x] Turn structure: secret choice resolved by speed category, speed set by target (session 4). Alternating dropped.
 - [ ] Two starter elements and their 6–8 spells each.
 - [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction.
 - [ ] Threshold placement: fixed public number or share of own limit.
-- [ ] Spells per turn (suggested: 1).
+- [x] Spells per turn: 2 or 3, exact value to tune (session 4).
 - [ ] Health vs. spellbook-size formula, with min and max.
 - [ ] Target match length (for example 8–12 turns).
 - [ ] Which meter transferred affliction enters when the target has two elements (caster's choice, target's choice, or fixed).
@@ -190,7 +191,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 
 - [ ] Answer the "before prototyping" questions in §10.
 - [ ] Paper prototype (or throwaway digital one) of the core duel: cast, cooldown, affliction, hidden health. No reserve or swaps yet.
-- [ ] Play it with speed-category resolution (and alternating as a comparison, if kept).
+- [ ] Play it with speed-category resolution, at 2 and at 3 spells per turn.
 - [ ] Watch or play *Mage Wars* and *Wizards of the Grimoire* (on Board Game Arena).
 - [ ] Decide opponent type and outer loop.
 
@@ -202,6 +203,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, with no interaction within a category. Resolves the session-2 ⚠. Utility category deferred. Proposed: sort spells by target (self = fast, opponent = slow). Added rock-paper-scissors watch note. Open: keep alternating as a comparison test. |
+| 0.5 | 2026-10-30 | 4 | Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: 2–3 spells per turn, exact value to tune. Proposed: the cap is "up to N". |
 
 ## Appendix: glossary
 
