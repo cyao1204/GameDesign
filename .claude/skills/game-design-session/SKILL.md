@@ -13,7 +13,7 @@ A design session is bounded by two phrases from Chris:
 
 1. Read `CLAUDE.md` and `GDD.md`.
 2. Read the most recent summary in `GameDesignSessions/`. If there is none, read the last file in `sessions/` (legacy logs for sessions 1–3).
-3. Work out the session number: the highest session number in the GDD changelog, plus 1.
+3. Work out the overall session number (used in the GDD and changelog): the highest session number in the GDD changelog, plus 1. This is separate from the within-day number used in the summary filename.
 4. In the GDD header, set **Last updated** to today with "(session N, in progress)". Set **Version** to the current version with "(X.Y pending: bumped at the end of session N)". Don't change the version number itself.
 5. Add one changelog row: `| X.Y (pending) | <date> | N | In progress. |`, where X.Y is the current version + 0.1.
 6. Tell Chris in 2–3 lines where the last session left off and what's next (usually the open questions in GDD §10). Then ask which topic to start with.
@@ -30,7 +30,7 @@ A design session is bounded by two phrases from Chris:
 
 1. **Bump the version** by 0.1. Update the header: remove "pending" and "in progress".
 2. **Finalize the changelog row:** replace "(pending)" with the version number, and rewrite the notes into one tidy summary of the session's changes.
-3. **Write the summary** to `GameDesignSessions/yyyy-mm-dd-s#.md`, using the date the session ended and the session number (e.g. `2026-10-30-s4.md`). Use the template below.
+3. **Write the summary** to `GameDesignSessions/yyyy-mm-dd-s#.md`. Use the date the session ended. `#` is the session's number **within that day**, not the overall session number: count the GDD changelog rows with the same date (legacy sessions included), and this session's place among them is `#`. Example: session 3 and session 4 were both on 2026-10-30, so session 4's file is `2026-10-30-s2.md`. Use the template below.
 4. **Commit** with `docs: end session N - GDD vX.Y`.
 5. **Tell Chris** what changed in the GDD (decided / tentative / proposed / reopened), what's still open, and ask whether to push.
 

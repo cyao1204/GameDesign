@@ -4,7 +4,7 @@ A solo first game: a 1v1 fantasy card duel where casting magic afflicts the cast
 
 ## Files
 - `GDD.md`: the living Game Design Document and the single source of truth for the design. Read it before any design discussion.
-- `GameDesignSessions/`: one summary per design session, named `yyyy-mm-dd-s#.md` (session date and session number, e.g. `2026-10-30-s4.md`).
+- `GameDesignSessions/`: one summary per design session, named `yyyy-mm-dd-s#.md`, where `#` is the session's number **within that day** (first session of the day is `s1`, the second `s2`, and so on). Count from the dates in the GDD changelog, which include legacy sessions.
 - `sessions/`: legacy logs for sessions 1–3. Don't add new files here.
 - `.claude/skills/game-design-session/`: the procedure for starting and ending a design session.
 
