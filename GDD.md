@@ -59,6 +59,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 
 - **[DECIDED]** No mana or other casting resource.
 - **[DECIDED]** Every cast adds affliction of the spell's element to the caster, whatever else the spell does.
+- **[DECIDED]** The affliction a spell adds **scales with its power** (session 4). Stronger spells cost more affliction **and** have longer cooldowns.
 - **[DECIDED]** Spells deal health damage directly.
 - **[DECIDED]** After a cast, the spell goes on **cooldown** (a wait of one or more turns before it can be used again, like abilities in *Overwatch*).
 - **[DECIDED]** Cap on spells per turn: **2 or 3** (session 4). Exact value [TENTATIVE], to tune in playtesting.
@@ -68,13 +69,16 @@ Pillars are short statements that define the game. Every new feature is checked 
   - **[DECIDED]** Stronger spells have cooldowns longer than 1 turn. This stops a rest-and-recast loop on the strongest spell, and it makes resting over several turns, or resting several slots at once, a strategic choice at the cost of casting fewer spells.
   - Watch: there's some overlap with overcasting (below). Both get around cooldowns, so they should feel different.
 - **[OPEN]** **Overcasting** (casting a spell before its cooldown ends) is not defined yet and can be changed (reopened in session 4). Idea so far: it belongs to one element only, for example lightning.
-- Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the prepared-spell count must allow for it.
+- Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the active-slot count must allow for it.
 
 ### 5.2 Health
 
 - **[DECIDED]** Health and affliction are separate meters. Health at 0 loses the match.
 - **[DECIDED]** Health is hidden from the opponent.
 - **[DECIDED]** Health and spellbook size share one pool: more spells means less starting health, and vice versa.
+- **[DECIDED]** Fixed rate (session 4): **starting health = total pool − number of spells in the spellbook**, counting active **and** reserve spells. Every spell costs the same health. Example: 8 spells (6 active, 2 reserve) gives pool − 8; 6 spells (all active) gives pool − 6.
+  - Why a fixed rate works: strong spells are already priced by longer cooldowns and higher affliction (§5.1), so health doesn't also need to vary per spell. It also keeps deduction simple: each revealed spell lowers the cap on the opponent's possible health.
+  - **[OPEN]** Pool size, and health cost per spell (the example uses 1).
 - Affliction can be managed; health is harder to recover.
 
 ### 5.3 Affliction
@@ -96,10 +100,14 @@ Pillars are short statements that define the game. Every new feature is checked 
 
 ### 5.4 Spellbook
 
+**Terms** (session 4): the **spellbook** is every spell a player brings. **Active** spells are in the active slots and usable from turn one. **Reserve** spells are the rest, hidden until swapped in. *Earlier versions said "prepared spells" for the active loadout; that word is dropped because it was being used for both meanings.*
+
 - **[DECIDED]** No card draw.
-- **[DECIDED]** **Prepared spells** are the starting loadout, all available from turn one.
+- **[DECIDED]** **Active spells** are the starting loadout, all available from turn one.
 - **[DECIDED]** A **hidden reserve** holds more spells that can be swapped in during the match.
-- **[DECIDED]** Deckbuilding is restricted by element (at most two) and by how many spells can be prepared.
+- **[TENTATIVE]** 6 active slots, with 8 spells per element (session 4 working numbers).
+- **[OPEN]** **Deckbuilding room.** With 8 spells per element and 6 active slots, a mono-element book has very little choice: only 2 spells left out. Options: fewer active slots, more spells per element, or both. See the session 4 discussion.
+- **[DECIDED]** Deckbuilding is restricted by element (at most two) and by how many active slots there are.
 - **[DECIDED]** Opponents see only spells that have been cast.
 - **[DEFERRED]** Swap cost. Candidate: the player chooses each time. Either swap free and the spell arrives on cooldown, or give up this turn's cast and it arrives ready.
 - **[DEFERRED]** Minimum and maximum spellbook size.
@@ -188,7 +196,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 - **Death spiral.** Falling behind keeps making you fall further behind. Passive growth plus health loss could decide matches early. Ways to reduce affliction must be able to pull a player back, and high-affliction rewards must be worth the risk.
 - **Pillar drift.** Because spells deal damage directly, the game could become a plain damage race with an affliction tax. Playtest check: *does a player ever cast a weaker spell because of affliction?*
 - **Hidden health feedback.** Hitting someone without seeing the result can feel hollow. Test whether there's enough signal, such as visible wounds or rough health bands.
-- **Flat spell cost.** Every spell costs the same health, so spells must be close in power or players will always take the strongest.
+- **Flat spell cost.** Every spell costs the same health, so spells must be close in power or players will always take the strongest. *Session 4 answer:* strong spells pay with longer cooldowns and more affliction. An all-strong book risks having everything on cooldown. Still to check in playtesting: resting can't erase those cooldowns too cheaply.
 - **Complexity budget.** Meters, thresholds, passive growth, empowerment, unlocks, transformations, cooldowns, swaps, overcasting and hidden health is a lot for a first game. Expect to cut about a third after prototyping.
 - **Scope of the opponent.** A good AI for a hidden-information game is hard to build. PvP needs networking and a player base.
 - **Brainstorm drift.** Too many decisions made on paper before anything has been played.
@@ -198,10 +206,11 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 **Must answer before prototyping**
 - [x] Turn structure: secret choice resolved by speed category, speed set by target (session 4). Alternating dropped.
 - [ ] Two starter elements and their 6–8 spells each. *Session 4: archetypes decided (one offensive, one defensive); roles and spells still open.*
-- [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction.
+- [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction. *Session 4: affliction per cast scales with spell power.*
 - [ ] Threshold placement: fixed public number or share of own limit.
 - [x] Spells per turn: 2 or 3, exact value to tune (session 4).
-- [ ] Health vs. spellbook-size formula, with min and max.
+- [x] Health vs. spellbook-size formula: health = pool − all spells (active + reserve), fixed rate (session 4). Pool size and min/max book size still open.
+- [ ] Deckbuilding room: active-slot count vs. spells per element (new, session 4).
 - [x] Target match length: 8–12 turns, TENTATIVE (session 4). Phase-based shaping deferred.
 - [ ] Which meter transferred affliction enters when the target has two elements (caster's choice, target's choice, or fixed).
 - [ ] Simultaneous 0-health outcome.
@@ -230,7 +239,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.1 | 2026-10-25 | 1 | Concept: magic harms the caster, no mana, empowerment and transformation, transfer. Fantasy setting. "Body is the board" dropped. Side-scroller deferred. |
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
-| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. Decided: the starter elements are one offensive-oriented and one defensive-oriented element (placeholder names; Fire + Frost rejected as cliché). Decided: Chaos is the third element, replacing the Shadow idea; its role is open. Decided: elements differ by their mix of spell roles (attack, defensive, utility), which are roles and not speed categories. Tentative mixes: Offensive 6/0/2, Defensive 3/3/2. Decided: Chaos direction is rule-breaking; candidate ideas (transfer, max-affliction fuel, death-defying) deferred. |
+| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. Decided: the starter elements are one offensive-oriented and one defensive-oriented element (placeholder names; Fire + Frost rejected as cliché). Decided: Chaos is the third element, replacing the Shadow idea; its role is open. Decided: elements differ by their mix of spell roles (attack, defensive, utility), which are roles and not speed categories. Tentative mixes: Offensive 6/0/2, Defensive 3/3/2. Decided: Chaos direction is rule-breaking; candidate ideas (transfer, max-affliction fuel, death-defying) deferred. Decided: health = pool − all spells in the book (active + reserve) at a fixed rate. Decided: affliction per cast scales with spell power. Terms: "prepared" replaced by spellbook / active / reserve. Tentative: 6 active slots, 8 spells per element. Open: deckbuilding room. |
 
 ## Appendix: glossary
 
