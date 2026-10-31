@@ -44,7 +44,7 @@ This turns on the pre-commit check. Run the check by hand with `python tools/che
 - When I make a decision, update `docs/GDD.md` straight away: change the item's status tag and add it to the session's pending changelog row. Don't bump the version (see above).
 - Status tags: [DECIDED] (my call), [TENTATIVE] (leaning, needs playtest), [PROPOSED] (your suggestion, not yet accepted), [OPEN], [DEFERRED]. Never mark your own suggestion as [DECIDED].
 - **Open questions** have stable IDs (`Q-###`) in GDD §10. Every [OPEN] tag cites its ID. Never resolve a `Q-###` silently, never reuse or renumber an ID. A new open question gets the next free number.
-- **Terms:** use the exact words in the GDD glossary (term registry). Add a new term there before using it.
+- **Terms:** game terms are working names and can change. Until one is renamed, use the exact word in the GDD glossary (term registry). Add a new term there before using it.
 - Don't silently resolve contradictions. Flag them with ⚠ in the GDD and ask.
 - Commit GDD changes locally as we go. Push only when I ask.
 

@@ -114,7 +114,7 @@ Status: **Done** (in the repo), **Pending** (do when the trigger is reached), **
 | ID | Item | Practice | Status |
 |---|---|---|---|
 | P-01 | Open questions get stable IDs (`Q-###`) in GDD §10; never resolved silently. | BP6 | Done (session 5) |
-| P-02 | GDD glossary is the official term registry; use its exact words everywhere. | BP5 | Done (session 5) |
+| P-02 | GDD glossary is the term registry; use its exact words everywhere. Game terms are working names and can change (Chris, session 5): consistency is what matters, so a rename is one find-and-replace. | BP5 | Done (session 5) |
 | P-03 | Commits cite the GDD: `docs: session N - <topic> [GDD §x.y @ vA.B]`. | BP6 | Done (session 5) |
 | P-04 | Session roles in CLAUDE.md: design, build, review (review in a fresh session). | BP9 | Done (session 5) |
 | P-05 | Stop hook warns on uncommitted changes; pre-commit hook runs the GDD lint (`tools/check_gdd.py`). | BP9 | Done (session 5) |
