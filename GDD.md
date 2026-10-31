@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-30 (session 3) |
+| **Last updated** | 2026-10-30 (session 4) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.3 |
+| **Version** | 0.4 |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -101,11 +101,16 @@ Pillars are short statements that define the game. Every new feature is checked 
 
 ### 5.5 Turn structure
 
-- **[TENTATIVE]** **Simultaneous:** both players pick in secret, then both spells resolve against the game state from before either one.
-- **[TENTATIVE, fallback]** **Alternating** turns like *Hearthstone*, with no responses on the opponent's turn.
-- ⚠ **Inconsistency to resolve.** In session 2 Chris first said "sequential, like Hearthstone" and later "lean toward simultaneous (C)". Plan: playtest both with the same spells.
-- Consequence of simultaneous play: reactive spells (reflect, counter) don't fit. Defensive spells would be effects that last into the next turn.
-- **[OPEN]** What happens when both players reach 0 health on the same turn.
+- **[TENTATIVE]** **Secret choice, resolved by speed category** (session 4). Both players pick in secret, then reveal. Spells resolve in category order, not by a per-spell speed number:
+  1. **Defensive** (fastest): cast on yourself, so they don't need to travel. Both players' defensive spells resolve together and don't interact with each other.
+  2. **Offensive** (slowest): always resolve last. If both players cast offensive spells, they resolve at the same time and don't interact with each other.
+- **[DEFERRED]** A third **utility** category. Chris isn't sure it's needed; explore later.
+- **[PROPOSED]** Sort spells by **target** instead of by theme: a spell targeting yourself is fast, a spell targeting the opponent is slow. This removes the need for a utility category. A self-cleanse becomes fast; transfer and debuffs become slow. *Trade-off:* a fast cleanse can escape a burn before the enemy's attack lands. That could be good drama or too safe.
+- **[OPEN]** Keep **alternating** turns (like *Hearthstone*) as a quick comparison test, or drop it?
+- Resolved ⚠ from session 2 (sequential vs. simultaneous): the speed-category hybrid replaces both pure options.
+- Consequence: defence beats offence on timing, so classic reactive spells (reflect, counter) can work as fast defensive spells. Guessing wrong still costs you the turn plus the affliction.
+- Watch: at 1 spell per turn, each turn may shrink to "attack or defend?" (close to rock-paper-scissors). It needs varied defensive options, or more than 1 spell per turn (see §5.1).
+- **[OPEN]** What happens when both players reach 0 health on the same turn (still possible, since offensive spells resolve together).
 
 ## 6. Elements
 
@@ -126,7 +131,7 @@ A **core loop** is the cycle of actions players repeat (in *Slay the Spire*: fig
 **Each turn**
 1. Choose a spell (in secret, if simultaneous).
 2. Cast: apply its effect and gain affliction of its element.
-3. Resolve both players' spells.
+3. Reveal and resolve: defensive spells first, then offensive spells (each category resolves together).
 4. Affliction check: passive growth and health loss above the threshold, plus empowerment or unlocks.
 5. Cooldowns tick down, and swap options open.
 
@@ -162,7 +167,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 ## 10. Open questions
 
 **Must answer before prototyping**
-- [ ] Turn structure to start with (simultaneous or alternating). Plan is to test both.
+- [x] Turn structure: secret choice resolved by speed category (TENTATIVE, session 4). Still open: keep alternating as a comparison test?
 - [ ] Two starter elements and their 6–8 spells each.
 - [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction.
 - [ ] Threshold placement: fixed public number or share of own limit.
@@ -185,7 +190,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 
 - [ ] Answer the "before prototyping" questions in §10.
 - [ ] Paper prototype (or throwaway digital one) of the core duel: cast, cooldown, affliction, hidden health. No reserve or swaps yet.
-- [ ] Play it both simultaneous and alternating with the same spells.
+- [ ] Play it with speed-category resolution (and alternating as a comparison, if kept).
 - [ ] Watch or play *Mage Wars* and *Wizards of the Grimoire* (on Board Game Arena).
 - [ ] Decide opponent type and outer loop.
 
@@ -196,6 +201,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.1 | 2026-10-25 | 1 | Concept: magic harms the caster, no mana, empowerment and transformation, transfer. Fantasy setting. "Body is the board" dropped. Side-scroller deferred. |
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
+| 0.4 | 2026-10-30 | 4 | Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, with no interaction within a category. Resolves the session-2 ⚠. Utility category deferred. Proposed: sort spells by target (self = fast, opponent = slow). Added rock-paper-scissors watch note. Open: keep alternating as a comparison test. |
 
 ## Appendix: glossary
 
@@ -206,5 +212,6 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 - **MDA:** Mechanics (rules) → Dynamics (behavior) → Aesthetics (feelings).
 - **Push-your-luck:** you choose how much risk to take (Blackjack).
 - **Rotation:** a fixed, always-optimal ability order (MMOs).
+- **Yomi:** "reading the mind"; predicting what the opponent will choose (*Street Fighter* mind games).
 - **Tell:** an unintended signal that gives away hidden information (poker).
 - **Pre-production:** the phase of cheap prototypes to "find the fun" before building the real game.
