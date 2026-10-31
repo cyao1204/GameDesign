@@ -125,12 +125,24 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** The two starter elements are **one offensive-oriented and one defensive-oriented element** (session 4). Fire + Frost was rejected as too cliché.
 - **[DEFERRED]** Element names. Placeholders for now: **Offensive element** and **Defensive element**.
 - **[DECIDED]** **Chaos** is the third element, after the starter pair (session 4). It replaces the Shadow/information idea. Name may change. Role [OPEN].
+- **[DECIDED]** Elements differ by their **mix of spell roles**, not by which roles they're allowed (session 4). A defensive element still has damage spells; it just has fewer of them.
+- **Spell roles:** *attack* (damages the opponent), *defensive* (protects the caster), *utility* (anything else, such as cleansing, cooldown tricks or transfer). These are **roles, not speed categories**: speed still comes only from the target (§5.5). For example, a self-cleanse is a fast utility spell and a transfer is a slow one.
+- **[TENTATIVE]** Example mixes for 8-spell elements:
+
+  | Element | Attack | Defensive | Utility |
+  |---|---|---|---|
+  | Offensive | 6 | 0 | 2 |
+  | Defensive | 3 | 3 | 2 |
+
+- Consequences:
+  - A mono-Offensive player has no protection except utility and resting. That makes it a pure race, and it gives players a reason to pair it with a second element. This supports the one-vs-two element trade-off above.
+  - With only 3 attack spells, the Defensive element's attacks may need to hit harder, cost less affliction or have shorter cooldowns to threaten a kill. To be tuned.
 - Watch: an offensive/defensive split has the same structure as fire/frost. Freshness has to come from each element's **affliction effect** and transformation, not from its name.
 
 | Element | Personality | Affliction effect | Special role | Status |
 |---|---|---|---|---|
-| Offensive (placeholder) | Aggressive | [OPEN] | [OPEN] | starter, decided |
-| Defensive (placeholder) | Defensive | [OPEN] | Likely the element that can lower affliction | starter, decided |
+| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] | [OPEN] | starter, decided |
+| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] | Likely the element that can lower affliction | starter, decided |
 | Chaos | [OPEN] | [OPEN] | [OPEN] | third element, decided |
 | Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
@@ -215,7 +227,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.1 | 2026-10-25 | 1 | Concept: magic harms the caster, no mana, empowerment and transformation, transfer. Fantasy setting. "Body is the board" dropped. Side-scroller deferred. |
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
-| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. Decided: the starter elements are one offensive-oriented and one defensive-oriented element (placeholder names; Fire + Frost rejected as cliché). Decided: Chaos is the third element, replacing the Shadow idea; its role is open. |
+| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. Decided: the starter elements are one offensive-oriented and one defensive-oriented element (placeholder names; Fire + Frost rejected as cliché). Decided: Chaos is the third element, replacing the Shadow idea; its role is open. Decided: elements differ by their mix of spell roles (attack, defensive, utility), which are roles and not speed categories. Tentative mixes: Offensive 6/0/2, Defensive 3/3/2. |
 
 ## Appendix: glossary
 
