@@ -7,7 +7,7 @@
 | **Designer** | Chris (solo, building with Claude) |
 | **Last updated** | 2026-10-30 (session 4) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.5 |
+| **Version** | 0.6 |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -62,7 +62,10 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Spells deal health damage directly.
 - **[DECIDED]** After a cast, the spell goes on **cooldown** (a wait of one or more turns before it can be used again, like abilities in *Overwatch*).
 - **[DECIDED]** Cap on spells per turn: **2 or 3** (session 4). Exact value [TENTATIVE], to tune in playtesting.
-- **[PROPOSED]** The cap is "up to N": casting fewer spells means less affliction, which makes how many to cast each turn part of the push-your-luck bet.
+- **[DECIDED]** The cap is "up to N" (session 4): casting fewer spells means less affliction, which makes how many to cast each turn part of the push-your-luck bet.
+- **[TENTATIVE]** **Resting** (session 4): slots left empty reduce affliction.
+  - ⚠ **Conflicts with §5.3**, which says lowering affliction is an ability of certain elements and is not universal. Resting would be a universal way to lower it. Needs Chris's call.
+  - **[OPEN]** Does it count per empty slot, or only when the whole turn is empty?
 - Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the prepared-spell count must allow for it.
 - **[DECIDED]** **Overcasting** (casting a spell before its cooldown ends) belongs to one element only, for example lightning.
 
@@ -79,7 +82,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** High affliction empowers or transforms the caster and can unlock spells.
 - **[DECIDED, may change]** Past a threshold, affliction grows on its own every turn **and** costs health every turn ("burn while high").
   - Backup if matches feel slow or predictable: **burnout**. Hitting max affliction costs a big chunk of health, then resets the meter and ends any transformation (like an overheated weapon in *Halo*).
-- **[DECIDED]** Raising, lowering and transferring affliction are abilities of certain elements, not universal.
+- **[DECIDED]** Raising, lowering and transferring affliction are abilities of certain elements, not universal. ⚠ Resting (§5.1) would add a universal way to lower it.
 - **[DECIDED]** Transfer is limited to a few elements and is not a central theme. *(Supersedes session 1's "transfer is part of the core.")*
 - **[DECIDED]** Transferred affliction raises one of the target's existing element meters.
 - **[OPEN]** Threshold placement: a fixed public number, or a share of each player's own limit (which would act as a "tell" about hidden health).
@@ -136,6 +139,10 @@ A **core loop** is the cycle of actions players repeat (in *Slay the Spire*: fig
 4. Affliction check: passive growth and health loss above the threshold, plus empowerment or unlocks.
 5. Cooldowns tick down, and swap options open.
 
+**Match length**
+- **[TENTATIVE]** Target: 8–12 turns, about 15 minutes (session 4). With 2–3 casts per turn, that means 16–36 casts per player, so affliction per spell must be small enough to last.
+- **[DEFERRED]** Shape pacing by **phases** instead of a fixed count: probing, then escalation, then a decisive peak, driven by when players cross the threshold. Revisit once the affliction numbers exist.
+
 **Between matches**
 Build a spellbook (choose elements, weigh spell count against health) → duel → adjust the book → repeat.
 
@@ -174,7 +181,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 - [ ] Threshold placement: fixed public number or share of own limit.
 - [x] Spells per turn: 2 or 3, exact value to tune (session 4).
 - [ ] Health vs. spellbook-size formula, with min and max.
-- [ ] Target match length (for example 8–12 turns).
+- [x] Target match length: 8–12 turns, TENTATIVE (session 4). Phase-based shaping deferred.
 - [ ] Which meter transferred affliction enters when the target has two elements (caster's choice, target's choice, or fixed).
 - [ ] Simultaneous 0-health outcome.
 
@@ -204,6 +211,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, with no interaction within a category. Resolves the session-2 ⚠. Utility category deferred. Proposed: sort spells by target (self = fast, opponent = slow). Added rock-paper-scissors watch note. Open: keep alternating as a comparison test. |
 | 0.5 | 2026-10-30 | 4 | Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: 2–3 spells per turn, exact value to tune. Proposed: the cap is "up to N". |
+| 0.6 | 2026-10-30 | 4 | Decided: "up to N" spells per turn. Tentative: match length 8–12 turns; phase-based pacing deferred. Tentative: resting (empty slots reduce affliction), flagged ⚠ against the §5.3 rule that lowering affliction is element-only. Open: rest per slot or per whole turn. |
 
 ## Appendix: glossary
 
