@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-30 (session 4) |
+| **Last updated** | 2026-10-31 (session 5, in progress) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.4 |
+| **Version** | 0.4 (0.5 pending: bumped at the end of session 5) |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -272,6 +272,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. |
 
 ## Appendix: glossary
 
