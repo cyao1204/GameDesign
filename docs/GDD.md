@@ -80,7 +80,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[DECIDED]** After a cast, the spell goes on **cooldown** (a wait of one or more turns before it can be used again, like abilities in *Overwatch*).
 - **[DECIDED]** Cap on spells per turn: **2 or 3** (session 4). Exact value [TENTATIVE], to tune in playtesting.
 - **[DECIDED]** The cap is "up to N" (session 4): casting fewer spells means less affliction, which makes how many to cast each turn part of the push-your-luck bet.
-- **[DECIDED]** **Resting** (session 4): leaving a slot empty lowers the cooldown of another spell of the player's choice. Resting does **not** lower affliction, which stays element-only (§5.3); its affliction benefit is simply not casting. *Replaces the earlier idea that resting lowers affliction, which conflicted with §5.3.*
+- **[DECIDED]** **Resting** (session 4): leaving a slot empty lowers the cooldown of another spell of the player's choice. Resting does **not** lower affliction; nothing does (§5.3). Its affliction benefit is simply not casting. *Replaces the earlier idea that resting lowers affliction, which conflicted with §5.3.*
   - **[DECIDED]** Each empty slot takes **1 turn** off one spell's cooldown. Slots stack: resting 2 slots in one turn can take 2 turns off the same spell.
   - **[DECIDED]** Stronger spells have cooldowns longer than 1 turn. This stops a rest-and-recast loop on the strongest spell, and it makes resting over several turns, or resting several slots at once, a strategic choice at the cost of casting fewer spells.
   - Watch: there's some overlap with overcasting (below). Both get around cooldowns, so they should feel different.
@@ -104,7 +104,10 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[DECIDED]** High affliction empowers or transforms the caster and can unlock spells.
 - **[DECIDED, may change]** Past a threshold, affliction grows on its own every turn **and** costs health every turn ("burn while high").
   - Backup if matches feel slow or predictable: **burnout**. Hitting max affliction costs a big chunk of health, then resets the meter and ends any transformation (like an overheated weapon in *Halo*).
-- **[DECIDED]** Raising, lowering and transferring affliction are abilities of certain elements, not universal.
+  - ⚠ (session 5) Burnout's reset lowers the meter, which conflicts with the no-lowering rule below. Keep it as the one exception (paid for in health), or drop the backup?
+- **[DECIDED]** **Affliction can never be lowered or cleansed** (session 5), by any element, spell or rest. It is the price of casting; if it could be removed, the price wouldn't be real. *Supersedes the earlier "lowering is an ability of certain elements".* Element tools may instead **slow** how fast affliction builds or **soften its consequences** (see the Defensive element, §6).
+- **[DECIDED]** Raising and transferring affliction are abilities of certain elements, not universal.
+  - ⚠ (session 5) Does transfer remove affliction from the caster? If it does, it is a form of lowering. If not, transfer only adds affliction to the target.
 - **[DECIDED]** Transfer is limited to a few elements and is not a central theme. *(Supersedes session 1's "transfer is part of the core.")*
 - **[DECIDED]** Transferred affliction raises one of the target's existing element meters.
 - **[DEFERRED]** Which meter it raises when the target has two elements (session 4). Deferred along with Chaos, which likely owns transfer.
@@ -155,13 +158,13 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[TENTATIVE]** **Secret choice, resolved by speed category** (session 4). Both players pick in secret, then reveal. Spells resolve in category order, not by a per-spell speed number:
   1. **Defensive** (fastest): cast on yourself, so they don't need to travel. Both players' defensive spells resolve together and don't interact with each other.
   2. **Offensive** (slowest): always resolve last. If both players cast offensive spells, they resolve at the same time and don't interact with each other.
-- **[DECIDED]** Speed is set by **target** (session 4): a spell targeting yourself is fast (defensive step), a spell targeting the opponent is slow (offensive step). No separate utility category is needed. A self-cleanse is fast; transfer and debuffs are slow. *Watch:* a fast cleanse can escape a burn before the enemy's attack lands. That could be good drama or too safe.
+- **[DECIDED]** Speed is set by **target** (session 4): a spell targeting yourself is fast (defensive step), a spell targeting the opponent is slow (offensive step). No separate utility category is needed. A self-shield is fast; transfer and debuffs are slow. *Watch:* a fast spell that prevents Burn (if adopted, §6) resolves before the enemy's attack lands. That could be good drama or too safe.
 - **[DECIDED]** Test only the simultaneous (speed-category) structure. **Alternating** turns are dropped, since spells for them would be designed completely differently.
 - Resolved ⚠ from session 2 (sequential vs. simultaneous): the speed-category hybrid replaces both pure options.
 - Consequence: defence beats offence on timing, so classic reactive spells (reflect, counter) can work as fast defensive spells. Guessing wrong still costs you the turn plus the affliction.
 - Watch: each turn could shrink to "attack or defend?" (close to rock-paper-scissors). Casting 2–3 spells per turn (§5.1) and varied defensive options should prevent this.
 - **[DECIDED]** **Both players reach 0 health on the same turn** (session 4): the player with **lower total affliction** wins, since the mage who controlled their magic survives. A draw happens only if total affliction is also tied. Because meters are public, players can see a near-tie coming.
-  - Watch: this slightly favours the Defensive element, which can lower its affliction. Fallback if playtests show that bias: the player with more health left (least far below 0) wins.
+  - Watch: this may favour the Defensive element if it builds affliction more slowly (§6). Fallback if playtests show that bias: the player with more health left (least far below 0) wins.
 
 ## 6. Elements
 
@@ -176,7 +179,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   - Watch: rule-breaking elements are the hardest to balance and to teach. Each exception adds to the complexity budget (§9).
 - **[DECIDED]** **No finishers** (session 5). There is no special class of match-ending spells. Spell power is a sliding scale: some spells are stronger and some weaker, and power is priced by affliction and cooldown (§5.1).
 - **[DECIDED]** Elements differ by their **mix of spell roles**, not by which roles they're allowed (session 4). A defensive element still has damage spells; it just has fewer of them.
-- **Spell roles:** *attack* (damages the opponent), *defensive* (protects the caster), *utility* (anything else, such as cleansing, cooldown tricks or transfer). These are **roles, not speed categories**: speed still comes only from the target (§5.5). For example, a self-cleanse is a fast utility spell and a transfer is a slow one.
+- **Spell roles:** *attack* (damages the opponent), *defensive* (protects the caster), *utility* (anything else, such as cooldown tricks or transfer). These are **roles, not speed categories**: speed still comes only from the target (§5.5). For example, a self-targeted cooldown trick is a fast utility spell and a transfer is a slow one.
 - **[TENTATIVE]** Example mixes for 8-spell elements:
 
   | Element | Attack | Defensive | Utility |
@@ -187,7 +190,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - Consequences:
   - A mono-Offensive player has no protection except utility and resting. That makes it a pure race, and it gives players a reason to pair it with a second element. This supports the one-vs-two element trade-off above.
   - With only 3 attack spells, the Defensive element's attacks may need to hit harder, cost less affliction or have shorter cooldowns to threaten a kill. To be tuned.
-- **[DECIDED]** The **Offensive element can never lower its own affliction** (session 4). In return, it gets **significant rewards for high affliction**: spells that are empowered, or only castable, in the Charged or Overloaded zones (§5.3).
+- **[DECIDED]** The **Offensive element can never lower its own affliction** (session 4; since session 5 no element can, §5.3). Its identity is that it gets **significant rewards for high affliction**: spells that are empowered, or only castable, in the Charged or Overloaded zones (§5.3).
   - **[DECIDED]** The reward is a **mix, led by unlocks**:
     1. **Main: unlocked spells.** Spells that can only be cast while Charged or higher. They are usually among the stronger spells, but they are not a special category.
     2. **Empowered spells.** Some spells deal more damage at high affliction.
@@ -199,8 +202,12 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 
 | Element | Personality | Affliction effect | Special role | Status |
 |---|---|---|---|---|
-| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] (Q-018) | Can't lower its own affliction; big rewards at high affliction | starter, decided |
-| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Likely the element that can lower affliction | starter, decided |
+| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] (Q-018) | Big rewards at high affliction | starter, decided |
+| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Endures affliction instead of removing it (candidates below the table) | starter, decided |
+
+**Defensive element under the no-lowering rule** (session 5). **[OPEN]** (Q-018) Chris's candidate ideas:
+- Its spells build affliction **much more slowly**.
+- Some spells **prevent Burn as a secondary effect** while the caster is Overloaded. The meter still rises; only the health loss is softened.
 | Chaos | Rule-breaking | [DEFERRED] | Transfer? Max-affliction fuel? Death-defying? | third element, decided |
 | Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
@@ -244,7 +251,7 @@ A **risk register**: each risk has the current answer (mitigation) and a **trigg
 | Risk | What could go wrong | Mitigation (current answer) | Trigger (act when…) |
 |---|---|---|---|
 | **Solved game** | With no draw, players find one best opening (a **rotation**) and repeat it. | Hidden health, the hidden reserve, simultaneous play. | Playtests or the simulation show one opening winning most matches. |
-| **Death spiral** | Falling behind keeps making you fall further behind. Passive growth plus health loss could decide matches early. | Ways to reduce affliction must be able to pull a player back, and high-affliction rewards must be worth the risk. | The player who is behind early almost never wins. |
+| **Death spiral** | Falling behind keeps making you fall further behind. Passive growth plus health loss could decide matches early. Affliction can't be lowered (session 5), so the pull-back has to come from elsewhere: high-affliction rewards worth the risk, tools that soften Burn, and hidden health. | The player who is behind early almost never wins. |
 | **Pillar drift** | Spells deal damage directly, so the game could become a plain damage race with an affliction tax. | Playtest check: *does a player ever cast a weaker spell because of affliction?* (experience goal "Tension", §2.1). | The answer is "no" in two playtests in a row. |
 | **Hidden health feedback** | Hitting someone without seeing the result can feel hollow. | Test signals such as visible wounds or rough health bands. | Playtesters say hits feel empty, or can't tell who is winning. |
 | **Flat spell cost** | Every spell costs the same health, so players always take the strongest spells. | *Session 4:* strong spells pay with longer cooldowns and more affliction. Still to check: an all-strong book may have everything on cooldown, and resting must not erase cooldowns too cheaply. | One kind of spellbook (all strong, or all weak) wins most matches. |
@@ -261,7 +268,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 |---|---|---|---|
 | Q-001 | Turn structure | Prototype | Resolved (session 4): secret choice resolved by speed category, speed set by target. Alternating dropped. |
 | Q-002 | Two starter elements and their 6–8 spells each | Prototype | Open. Archetypes decided (one Offensive, one Defensive); roles and spells still open. |
-| Q-003 | Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction | Prototype | Open. Decided so far: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; the Offensive element can't lower its own affliction. Still open: exact numbers and the Defensive element's reduction spells. |
+| Q-003 | Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction | Prototype | Open. Decided so far: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; no element can lower affliction (session 5), so the "way to reduce affliction" part is dropped. Still open: exact numbers, including how much more slowly the Defensive element builds (Q-018). |
 | Q-004 | Threshold placement | Prototype | Resolved (session 4): fixed boundaries, the same for everyone. Element-shifted boundaries deferred. |
 | Q-005 | Spells per turn | Prototype | Resolved (session 4): up to 2–3, exact value to tune; empty slots rest. |
 | Q-006 | Health vs. spellbook-size formula | Prototype | Resolved (session 4): health = pool − all spells (active + reserve), fixed rate. Pool size is Q-016; min/max book size deferred (§5.4). |
@@ -303,7 +310,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup, no rule changes: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup, no rule changes: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element candidates: slower build-up, Burn prevention while Overloaded (Q-018); ⚠ burnout reset and transfer flagged. |
 
 ## Appendix: glossary (term registry)
 
