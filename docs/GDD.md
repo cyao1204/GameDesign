@@ -14,10 +14,14 @@
 - **[DECIDED]**: Chris has made the call. Change it only on purpose, and log the change in the changelog.
 - **[TENTATIVE]**: leaning this way, to be confirmed by playtesting.
 - **[PROPOSED]**: suggested by Claude, not yet accepted by Chris.
-- **[OPEN]**: not decided. Listed in §10.
+- **[OPEN]**: not decided. Each one has a stable ID (`Q-###`) listed in §10, and the ID is cited next to the tag.
 - **[DEFERRED]**: deliberately postponed until later.
 
 All numbers are placeholders until playtesting, unless marked otherwise.
+
+**Terms.** The glossary (appendix) is the official word list. Use its exact terms in this doc, session summaries, commits and, later, code. A new term is added to the glossary before it is used.
+
+**Checks.** `tools/check_gdd.py` checks this file's tags, version header, changelog and `Q-###` IDs. It runs on every commit (see `CLAUDE.md`).
 
 ---
 
@@ -38,11 +42,23 @@ Pillars are short statements that define the game. Every new feature is checked 
 
 > Target: 3–4 pillars before production. Session 1 proposed "Every spell costs your body; winning means mastering how much you can take." It was superseded by pillar 1.
 
+### 2.1 Experience goals
+
+An **experience goal** is the feeling a pillar should create in the player. It's the "Aesthetics" in MDA (see glossary): you pick the feeling first, then check that the rules produce it. Example: *Slay the Spire* aims for "tense, informed risk" on every card choice. Each playtest checks every goal (`docs/playtests/`).
+
+**[OPEN]** (Q-013) Which goals to commit to. Candidates, all **[PROPOSED]**:
+
+| Pillar | Experience goal (candidate) | Playtest question |
+|---|---|---|
+| 1. Affliction is the cost | **Tension:** every cast feels like it costs something. | Did the player ever hold back a spell because of affliction? |
+| 2. Read your opponent | **Insight:** the satisfaction of guessing hidden health or spells correctly. | Did the player make a call based on a read, and say why? |
+| 3. Push-your-luck bet | **Thrill of the gamble:** pushing into Charged or Overloaded feels risky and exciting, not forced. | Did the player choose to enter a high zone, and did it feel worth it? |
+
 ## 3. Designer constraints
 
 - **Team:** solo with Claude's help. Strong coding experience, new to game design.
 - **Time:** 3–4 h on workdays, 5+ h on weekends. Target is about 6 months, flexible.
-- **Platform:** PC and/or web. **Engine:** [OPEN].
+- **Platform:** PC and/or web. **Engine:** [OPEN] (Q-014).
 - **Inspirations:** card games (Magic: The Gathering, Hearthstone, Riftbound), RTS (StarCraft, Warcraft, Command & Conquer, Age of Wonders), RPGs.
 - **What I enjoy most:** outmaneuvering an opponent 1v1, discovering card interactions and building decks, combining planning with combat.
 
@@ -51,7 +67,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Fantasy setting.
 - **[DECIDED]** Format: one-on-one card duel. Tactics (grid) was dropped in session 2.
 - **[DEFERRED]** Side-scroller, as a possible later project. Out of scope for a solo dev at about 6 months.
-- **[TENTATIVE]** Opponent: AI first, built so PvP could be added later (session 1 plan). Final choice is still [OPEN] (§10).
+- **[TENTATIVE]** Opponent: AI first, built so PvP could be added later (session 1 plan). Final choice is still [OPEN] (Q-010).
 
 ## 5. Core mechanics
 
@@ -68,7 +84,7 @@ Pillars are short statements that define the game. Every new feature is checked 
   - **[DECIDED]** Each empty slot takes **1 turn** off one spell's cooldown. Slots stack: resting 2 slots in one turn can take 2 turns off the same spell.
   - **[DECIDED]** Stronger spells have cooldowns longer than 1 turn. This stops a rest-and-recast loop on the strongest spell, and it makes resting over several turns, or resting several slots at once, a strategic choice at the cost of casting fewer spells.
   - Watch: there's some overlap with overcasting (below). Both get around cooldowns, so they should feel different.
-- **[OPEN]** **Overcasting** (casting a spell before its cooldown ends) is not defined yet and can be changed (reopened in session 4). Idea so far: it belongs to one element only, for example lightning.
+- **[OPEN]** (Q-015) **Overcasting** (casting a spell before its cooldown ends) is not defined yet and can be changed (reopened in session 4). Idea so far: it belongs to one element only, for example lightning.
 - Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the active-slot count must allow for it.
 
 ### 5.2 Health
@@ -79,7 +95,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Health and spellbook size share one pool: more spells means less starting health, and vice versa.
 - **[DECIDED]** Fixed rate (session 4): **starting health = total pool − number of spells in the spellbook**, counting active **and** reserve spells. Every spell costs the same health. Example: 8 spells (6 active, 2 reserve) gives pool − 8; 6 spells (all active) gives pool − 6.
   - Why a fixed rate works: strong spells are already priced by longer cooldowns and higher affliction (§5.1), so health doesn't also need to vary per spell. It also keeps deduction simple: each revealed spell lowers the cap on the opponent's possible health.
-  - **[OPEN]** Pool size, and health cost per spell (the example uses 1).
+  - **[OPEN]** (Q-016) Pool size, and health cost per spell (the example uses 1).
 - Affliction can be managed; health is harder to recover.
 
 ### 5.3 Affliction
@@ -108,7 +124,7 @@ Pillars are short statements that define the game. Every new feature is checked 
   | **Overloaded** | about 14 to 20 | Empowerment continues, plus affliction grows by itself each turn and burns health (the "burn while high" rule above). |
 
   Zone boundaries are [TENTATIVE].
-- **[PROPOSED]** Check pacing with a quick spreadsheet or script before paper playtesting: casts per turn × affliction per spell against the 8–12 turn target.
+- **[DECIDED]** (session 5) Check pacing with a quick script before paper playtesting: casts per turn × affliction per spell against the 8–12 turn target, plus the Overloaded "death clock". Built once the starter spells have first-pass numbers (process item P-10 in `docs/design/process-research.md`).
 
 **Element afflictions (examples from session 1, not final; Fire and Frost are no longer the starter pair, see §6):**
 - Fire: builds heat that burns you every turn.
@@ -132,7 +148,7 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Opponents see only spells that have been cast, but they see **all** of them, self-targeted spells included (confirmed in session 4).
 - **[DEFERRED]** Swap cost. Candidate: the player chooses each time. Either swap free and the spell arrives on cooldown, or give up this turn's cast and it arrives ready.
 - **[DEFERRED]** Minimum and maximum spellbook size.
-- **[OPEN]** Swap triggers (after N turns, conditions, or spells).
+- **[OPEN]** (Q-017) Swap triggers (after N turns, conditions, or spells).
 
 ### 5.5 Turn structure
 
@@ -182,8 +198,8 @@ Pillars are short statements that define the game. Every new feature is checked 
 
 | Element | Personality | Affliction effect | Special role | Status |
 |---|---|---|---|---|
-| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] | Can't lower its own affliction; big rewards at high affliction | starter, decided |
-| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] | Likely the element that can lower affliction | starter, decided |
+| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] (Q-018) | Can't lower its own affliction; big rewards at high affliction | starter, decided |
+| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Likely the element that can lower affliction | starter, decided |
 | Chaos | Rule-breaking | [DEFERRED] | Transfer? Max-affliction fuel? Death-defying? | third element, decided |
 | Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
@@ -205,7 +221,7 @@ A **core loop** is the cycle of actions players repeat (in *Slay the Spire*: fig
 **Between matches**
 Build a spellbook (choose elements, weigh spell count against health) → duel → adjust the book → repeat.
 
-**Outer loop:** [OPEN]. Matches only, or a campaign or run around them. This is the biggest scope decision left.
+**Outer loop:** [OPEN] (Q-011). Matches only, or a campaign or run around them. This is the biggest scope decision left.
 
 ## 8. Comparable games
 
@@ -222,47 +238,60 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 
 ## 9. Risks and watch-list
 
-- **Solved game.** With no draw, players may find one best opening (a **rotation**) and repeat it. Current answers: hidden health, the hidden reserve, simultaneous play.
-- **Death spiral.** Falling behind keeps making you fall further behind. Passive growth plus health loss could decide matches early. Ways to reduce affliction must be able to pull a player back, and high-affliction rewards must be worth the risk.
-- **Pillar drift.** Because spells deal damage directly, the game could become a plain damage race with an affliction tax. Playtest check: *does a player ever cast a weaker spell because of affliction?*
-- **Hidden health feedback.** Hitting someone without seeing the result can feel hollow. Test whether there's enough signal, such as visible wounds or rough health bands.
-- **Flat spell cost.** Every spell costs the same health, so spells must be close in power or players will always take the strongest. *Session 4 answer:* strong spells pay with longer cooldowns and more affliction. An all-strong book risks having everything on cooldown. Still to check in playtesting: resting can't erase those cooldowns too cheaply.
-- **Complexity budget.** Meters, thresholds, passive growth, empowerment, unlocks, transformations, cooldowns, swaps, overcasting and hidden health is a lot for a first game. Expect to cut about a third after prototyping.
-- **Scope of the opponent.** A good AI for a hidden-information game is hard to build. PvP needs networking and a player base.
-- **Brainstorm drift.** Too many decisions made on paper before anything has been played.
+A **risk register**: each risk has the current answer (mitigation) and a **trigger**, the sign that it is actually happening and needs action. Review it at the start of each phase. Triggers are **[PROPOSED]** (session 5).
+
+| Risk | What could go wrong | Mitigation (current answer) | Trigger (act when…) |
+|---|---|---|---|
+| **Solved game** | With no draw, players find one best opening (a **rotation**) and repeat it. | Hidden health, the hidden reserve, simultaneous play. | Playtests or the simulation show one opening winning most matches. |
+| **Death spiral** | Falling behind keeps making you fall further behind. Passive growth plus health loss could decide matches early. | Ways to reduce affliction must be able to pull a player back, and high-affliction rewards must be worth the risk. | The player who is behind early almost never wins. |
+| **Pillar drift** | Spells deal damage directly, so the game could become a plain damage race with an affliction tax. | Playtest check: *does a player ever cast a weaker spell because of affliction?* (experience goal "Tension", §2.1). | The answer is "no" in two playtests in a row. |
+| **Hidden health feedback** | Hitting someone without seeing the result can feel hollow. | Test signals such as visible wounds or rough health bands. | Playtesters say hits feel empty, or can't tell who is winning. |
+| **Flat spell cost** | Every spell costs the same health, so players always take the strongest spells. | *Session 4:* strong spells pay with longer cooldowns and more affliction. Still to check: an all-strong book may have everything on cooldown, and resting must not erase cooldowns too cheaply. | One kind of spellbook (all strong, or all weak) wins most matches. |
+| **Complexity budget** | Meters, thresholds, passive growth, empowerment, unlocks, transformations, cooldowns, swaps, overcasting and hidden health is a lot for a first game. | Expect to cut about a third after prototyping. A scope freeze before prototype code (process item P-25). | A new player can't play a match after a 5-minute explanation. |
+| **Scope of the opponent** | A good AI for a hidden-information game is hard to build. PvP needs networking and a player base. | AI first, built so PvP can be added later (§4). Decided in Q-010. | Before development starts. |
+| **Brainstorm drift** | Too many decisions made on paper before anything has been played. | Paper prototype next (§11). After it, design sessions start from playtest findings. | Two more design sessions pass with no playtest. |
+| **Solo obstacles** | Small teams hit obstacles about twice as often as large ones (postmortem study S2 in `docs/design/process-research.md`). | This register, reviewed at each phase start; checks instead of memory (`tools/check_gdd.py`). | Any trigger above fires. |
 
 ## 10. Open questions
 
-**Must answer before prototyping**
-- [x] Turn structure: secret choice resolved by speed category, speed set by target (session 4). Alternating dropped.
-- [ ] Two starter elements and their 6–8 spells each. *Session 4: archetypes decided (one offensive, one defensive); roles and spells still open.*
-- [ ] Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction. *Session 4: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; the Offensive element can't lower its own affliction. Still open: exact numbers and the Defensive element's reduction spells.*
-- [x] Threshold placement: fixed boundaries, the same for everyone (session 4). Element-shifted boundaries deferred.
-- [x] Spells per turn: up to 2–3, exact value to tune; empty slots rest (session 4).
-- [x] Health vs. spellbook-size formula: health = pool − all spells (active + reserve), fixed rate (session 4). Pool size and min/max book size still open.
-- [x] Deckbuilding room: prototype at 8 spells per element and 4–5 active slots; 12+ per element for the full game (session 4).
-- [x] Target match length: 8–12 turns, TENTATIVE (session 4). Phase-based shaping deferred.
-- [x] Simultaneous 0-health outcome: lower total affliction wins, then a draw (session 4).
+Every open question has a stable ID. IDs are never reused or renumbered. Cite them in the doc (next to the [OPEN] tag), in session summaries and in commits. **Never resolve a `Q-###` silently:** ask Chris, then record the answer here.
 
-**Must answer before development**
-- [ ] Opponent: AI, local hot-seat, or online PvP.
-- [ ] Outer loop: matches only, or campaign/run.
-- [ ] Pillars 2–3 (confirm or replace the proposed ones).
-- [ ] Engine.
+| ID | Question | Needed by | Status |
+|---|---|---|---|
+| Q-001 | Turn structure | Prototype | Resolved (session 4): secret choice resolved by speed category, speed set by target. Alternating dropped. |
+| Q-002 | Two starter elements and their 6–8 spells each | Prototype | Open. Archetypes decided (one Offensive, one Defensive); roles and spells still open. |
+| Q-003 | Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction | Prototype | Open. Decided so far: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; the Offensive element can't lower its own affliction. Still open: exact numbers and the Defensive element's reduction spells. |
+| Q-004 | Threshold placement | Prototype | Resolved (session 4): fixed boundaries, the same for everyone. Element-shifted boundaries deferred. |
+| Q-005 | Spells per turn | Prototype | Resolved (session 4): up to 2–3, exact value to tune; empty slots rest. |
+| Q-006 | Health vs. spellbook-size formula | Prototype | Resolved (session 4): health = pool − all spells (active + reserve), fixed rate. Pool size is Q-016; min/max book size deferred (§5.4). |
+| Q-007 | Deckbuilding room | Prototype | Resolved (session 4): 8 spells per element and 4–5 active slots in the prototype; 12+ per element for the full game. |
+| Q-008 | Target match length | Prototype | Resolved (session 4): 8–12 turns, TENTATIVE. Phase-based shaping deferred. |
+| Q-009 | Simultaneous 0-health outcome | Prototype | Resolved (session 4): lower total affliction wins, then a draw. |
+| Q-010 | Opponent: AI, local hot-seat, or online PvP | Development | Open. |
+| Q-011 | Outer loop: matches only, or campaign/run | Development | Open. The biggest scope decision left. |
+| Q-012 | Pillars 2–3: confirm or replace the proposed ones | Development | Open. |
+| Q-013 | Experience goals per pillar (§2.1) | First paper playtest | Open (session 5). Candidates proposed. |
+| Q-014 | Engine | Development | Open. 💡 **[PROPOSED]** (session 5): move to "before the digital prototype", since changing tools during production is costly (BP8 in `docs/design/process-research.md`). |
+| Q-015 | Overcasting: what it is and which element owns it (§5.1) | Not blocking | Open (reopened in session 4). |
+| Q-016 | Health pool size and health cost per spell (§5.2) | Prototype | Open. |
+| Q-017 | Swap triggers (§5.4) | Not blocking | Open. Reserve and swaps are out of the first prototype. |
+| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. |
 
-**Deferred**
+**Deferred** (not questions yet)
 - Defensive spells, full element roster, swap cost and triggers, transformations beyond one example, progression, art, audio.
 - Chaos element design, and which meter transferred affliction enters (session 4).
 
 ## 11. Next steps
 
-- [ ] Design the starter spells: 8 per element (Offensive about 6/0/2, Defensive about 3/3/2), each with affliction cost, cooldown and effect. Include 1–2 Offensive finishers.
-- [ ] Set first-pass numbers: health pool, zone boundaries, Overloaded growth and burn.
-- [ ] Pacing check with a quick spreadsheet or script against the 8–12 turn target (proposed).
+- [ ] Design the starter spells (Q-002, Q-018): 8 per element (Offensive about 6/0/2, Defensive about 3/3/2), each with affliction cost, cooldown and effect. Include 1–2 Offensive finishers.
+- [ ] Set first-pass numbers (Q-003, Q-016): health pool, zone boundaries, Overloaded growth and burn.
+- [ ] Pacing script against the 8–12 turn target, once the numbers above exist (P-10).
+- [ ] Decide the experience goals (Q-013) before the first playtest.
 - [ ] Paper prototype (or throwaway digital one) of the core duel: cast, cooldown, affliction, hidden health. No reserve or swaps yet.
-- [ ] Play it with speed-category resolution, at 2 and at 3 spells per turn.
+- [ ] Play it with speed-category resolution, at 2 and at 3 spells per turn. Run each playtest with the `playtest-session` skill and log it in `docs/playtests/`.
 - [ ] Watch or play *Mage Wars* and *Wizards of the Grimoire* (on Board Game Arena).
-- [ ] Decide opponent type and outer loop.
+- [ ] Decide opponent type (Q-010) and outer loop (Q-011).
+- [ ] At each new phase, do the process items whose trigger has been reached (§5 of `docs/design/process-research.md`).
 
 ## 12. Changelog
 
@@ -272,17 +301,38 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup, no rule changes: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. |
 
-## Appendix: glossary
+## Appendix: glossary (term registry)
 
+The official word list (see "Terms" at the top). Use these exact words; no synonyms. Game terms first, then design jargon.
+
+**Game terms**
+- **Active spells:** the spells in a player's active slots, usable from turn one (§5.4).
+- **Affliction:** the cost of casting. Each cast adds affliction of the spell's element to the caster (§5.3).
+- **Affliction meter:** one per element, 0–20, public (§5.3).
+- **Burn:** health lost each turn while Overloaded (§5.3).
+- **Calm / Charged / Overloaded:** the three zones of an affliction meter (§5.3).
+- **Death clock:** a mono-Offensive player's limited time once Overloaded, since affliction keeps rising and burning (§6).
+- **Finisher:** an Offensive spell that can only be cast while Charged or higher (§6).
+- **Overcasting:** casting a spell before its cooldown ends. Not defined yet (Q-015).
+- **Reserve:** spells in the spellbook but not in the active slots, hidden until swapped in (§5.4).
+- **Resting:** leaving a cast slot empty to take 1 turn off a chosen spell's cooldown (§5.1).
+- **Speed category:** when a spell resolves. Self-targeted spells are *defensive* (fast); opponent-targeted spells are *offensive* (slow) (§5.5).
+- **Spell roles:** attack, defensive, utility. Roles are not speed categories (§6).
+- **Spellbook:** every spell a player brings, active and reserve (§5.4).
+- **Swap:** moving a reserve spell into an active slot (§5.4).
+
+**Design jargon**
 - **Cooldown:** turns a spell must wait before reuse (*Overwatch* abilities).
 - **Core loop:** the repeated cycle of play (*Tetris*: rotate, place, clear lines).
 - **Death spiral:** falling behind makes you fall further behind (*Monopoly*).
 - **Design pillar:** a short statement that defines the game and filters features.
+- **Experience goal:** the feeling a pillar should create in the player; the "Aesthetics" of MDA (§2.1).
 - **MDA:** Mechanics (rules) → Dynamics (behavior) → Aesthetics (feelings).
-- **Push-your-luck:** you choose how much risk to take (Blackjack).
-- **Rotation:** a fixed, always-optimal ability order (MMOs).
-- **Yomi:** "reading the mind"; predicting what the opponent will choose (*Street Fighter* mind games).
-- **Tell:** an unintended signal that gives away hidden information (poker).
 - **Pre-production:** the phase of cheap prototypes to "find the fun" before building the real game.
+- **Push-your-luck:** you choose how much risk to take (Blackjack).
+- **Risk register:** a list of risks, each with a mitigation and a trigger for action (§9).
+- **Rotation:** a fixed, always-optimal ability order (MMOs).
+- **Tell:** an unintended signal that gives away hidden information (poker).
+- **Yomi:** "reading the mind"; predicting what the opponent will choose (*Street Fighter* mind games).
