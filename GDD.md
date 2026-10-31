@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-30 (session 4) |
+| **Last updated** | 2026-10-30 (session 4, in progress) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.7 |
+| **Version** | 0.3 (0.4 pending: bumped at the end of session 4) |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -64,11 +64,11 @@ Pillars are short statements that define the game. Every new feature is checked 
 - **[DECIDED]** Cap on spells per turn: **2 or 3** (session 4). Exact value [TENTATIVE], to tune in playtesting.
 - **[DECIDED]** The cap is "up to N" (session 4): casting fewer spells means less affliction, which makes how many to cast each turn part of the push-your-luck bet.
 - **[DECIDED]** **Resting** (session 4): leaving a slot empty lowers the cooldown of another spell of the player's choice. Resting does **not** lower affliction, which stays element-only (§5.3); its affliction benefit is simply not casting. *Replaces the earlier idea that resting lowers affliction, which conflicted with §5.3.*
-  - **[OPEN]** Does it count per empty slot, or only when the whole turn is empty? How much cooldown does it remove?
-  - Watch: resting could become a loop that recasts the strongest spell every other turn, which worsens the flat-spell-cost risk (§9).
-  - Watch: there's some overlap with overcasting (§5.1). Overcasting ignores a cooldown at a cost; resting shortens one by giving up a cast.
+  - **[DECIDED]** Each empty slot takes **1 turn** off one spell's cooldown. Slots stack: resting 2 slots in one turn can take 2 turns off the same spell.
+  - **[DECIDED]** Stronger spells have cooldowns longer than 1 turn. This stops a rest-and-recast loop on the strongest spell, and it makes resting over several turns, or resting several slots at once, a strategic choice at the cost of casting fewer spells.
+  - Watch: there's some overlap with overcasting (below). Both get around cooldowns, so they should feel different.
+- **[OPEN]** **Overcasting** (casting a spell before its cooldown ends) is not defined yet and can be changed (reopened in session 4). Idea so far: it belongs to one element only, for example lightning.
 - Consequence: multiple casts let a player defend and attack in the same turn, which eases the rock-paper-scissors concern in §5.5. Affliction builds 2–3× faster per turn, so the per-spell affliction and the prepared-spell count must allow for it.
-- **[DECIDED]** **Overcasting** (casting a spell before its cooldown ends) belongs to one element only, for example lightning.
 
 ### 5.2 Health
 
@@ -209,10 +209,7 @@ Build a spellbook (choose elements, weigh spell count against health) → duel �
 | 0.1 | 2026-10-25 | 1 | Concept: magic harms the caster, no mana, empowerment and transformation, transfer. Fantasy setting. "Body is the board" dropped. Side-scroller deferred. |
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
-| 0.4 | 2026-10-30 | 4 | Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, with no interaction within a category. Resolves the session-2 ⚠. Utility category deferred. Proposed: sort spells by target (self = fast, opponent = slow). Added rock-paper-scissors watch note. Open: keep alternating as a comparison test. |
-| 0.5 | 2026-10-30 | 4 | Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: 2–3 spells per turn, exact value to tune. Proposed: the cap is "up to N". |
-| 0.6 | 2026-10-30 | 4 | Decided: "up to N" spells per turn. Tentative: match length 8–12 turns; phase-based pacing deferred. Tentative: resting (empty slots reduce affliction), flagged ⚠ against the §5.3 rule that lowering affliction is element-only. Open: rest per slot or per whole turn. |
-| 0.7 | 2026-10-30 | 4 | Decided: resting lowers the cooldown of a spell the player picks, not affliction. Resolves the v0.6 ⚠; lowering affliction stays element-only. Open: per slot or per turn, and how much. Watch notes: rest-recast loop, overlap with overcasting. |
+| 0.4 (pending) | 2026-10-30 | 4 | In progress. Turn structure (TENTATIVE): secret choice resolved by speed category, defensive first and offensive last, no interaction within a category; resolves the session-2 ⚠. Decided: speed set by target (self = fast, opponent = slow), no utility category. Decided: test simultaneous only, alternating dropped. Decided: up to 2–3 spells per turn ("up to N"), exact value to tune. Tentative: match length 8–12 turns; phase-based pacing deferred. Decided: resting, where each empty slot takes 1 turn off a chosen spell's cooldown, stacking; it does not lower affliction. Decided: stronger spells have cooldowns longer than 1 turn. Reopened: overcasting is now OPEN. |
 
 ## Appendix: glossary
 

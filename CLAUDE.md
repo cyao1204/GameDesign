@@ -4,7 +4,9 @@ A solo first game: a 1v1 fantasy card duel where casting magic afflicts the cast
 
 ## Files
 - `GDD.md`: the living Game Design Document and the single source of truth for the design. Read it before any design discussion.
-- `sessions/`: one log per design session (what was discussed, what was decided, what is left open).
+- `GameDesignSessions/`: one summary per design session, named `yyyy-mm-dd-s#.md` (session date and session number, e.g. `2026-10-30-s4.md`).
+- `sessions/`: legacy logs for sessions 1–3. Don't add new files here.
+- `.claude/skills/game-design-session/`: the procedure for starting and ending a design session.
 
 ## About me
 - New to game design, no formal background. Explain any jargon the first time it comes up, with a short example from a well-known game.
@@ -18,8 +20,13 @@ A solo first game: a 1v1 fantasy card duel where casting magic afflicts the cast
 - Keep scope realistic for a first game. Flag anything that would take a large team or years.
 - Don't jump to code or engine specifics unless I ask. Design first.
 
+## Design sessions
+- A session starts when I say something like **"Starting game design session"** and ends only when I say **"End game design session"**. Follow the `game-design-session` skill for both.
+- **Version bumps happen once per session, at the end.** Never bump the GDD version mid-session, however many decisions we make.
+- At the end of a session: bump the version, finalize the changelog row, write the summary to `GameDesignSessions/yyyy-mm-dd-s#.md`, and tell me what changed in the GDD.
+
 ## Keeping the GDD
-- When I make a decision, update `GDD.md`: change the item's status tag, bump the version, and add a changelog row.
+- When I make a decision, update `GDD.md` straight away: change the item's status tag and add it to the session's pending changelog row. Don't bump the version (see above).
 - Status tags: [DECIDED] (my call), [TENTATIVE] (leaning, needs playtest), [PROPOSED] (your suggestion, not yet accepted), [OPEN], [DEFERRED]. Never mark your own suggestion as [DECIDED].
-- At the end of a session, write `sessions/session-NN.md` and tell me what changed in the GDD.
 - Don't silently resolve contradictions. Flag them with ⚠ in the GDD and ask.
+- Commit GDD changes locally as we go. Push only when I ask.
