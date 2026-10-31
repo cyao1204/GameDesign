@@ -1,0 +1,26 @@
+#!/bin/sh
+# Pre-commit: run the GDD check (tools/check_gdd.py) and its tests.
+# Install once per clone: git config core.hooksPath .githooks
+# Never bypass with --no-verify: a failure here is a real mistake to fix.
+
+if command -v python >/dev/null 2>&1; then
+  py=python
+elif command -v python3 >/dev/null 2>&1; then
+  py=python3
+else
+  echo "pre-commit: Python not found; cannot run tools/check_gdd.py. Commit REJECTED."
+  exit 1
+fi
+
+if ! "$py" tools/check_gdd.py; then
+  echo "pre-commit: GDD check failed. Commit REJECTED. Fix the issues above."
+  exit 1
+fi
+
+if ! output=$("$py" -m unittest discover -s tools 2>&1); then
+  echo "$output"
+  echo "pre-commit: check_gdd tests failed. Commit REJECTED."
+  exit 1
+fi
+
+exit 0
