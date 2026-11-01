@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-31 (session 5, in progress) |
+| **Last updated** | 2026-10-31 (session 5) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.4 (0.5 pending: bumped at the end of session 5) |
+| **Version** | 0.5 |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -328,8 +328,10 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 
 ## 11. Next steps
 
-- [ ] Design the starter spells (Q-002, Q-018): 8 per element (Offensive about 6/0/2, Defensive about 3/3/2), each with affliction cost, cooldown and effect. Include 1–2 Offensive spells that unlock at Charged.
-- [ ] Set first-pass numbers (Q-003, Q-016): health pool, zone boundaries, Overloaded growth and burn.
+- [ ] Design the starter spells (Q-002, Q-018), **one design session per element** (session 5 plan). 8 spells per element, each with affliction cost, cooldown and effect, plus what the element's empowerment at Charged does:
+  - [ ] Offensive element: about 6 attack / 0 defensive / 2 utility. Include 1–2 spells that unlock at Charged.
+  - [ ] Defensive element: about 3 attack / 3 defensive / 2 utility, built around the Endurer profile (slow build-up, Burn-prevention spells usable while Overloaded).
+- [ ] Set first-pass numbers (Q-003, Q-016): health pool, zone boundaries, Overloaded growth rate. The Burn curve already has placeholder values (§5.3).
 - [ ] Pacing script against the 8–12 turn target, once the numbers above exist (P-10).
 - [ ] Decide the experience goals (Q-013) before the first playtest.
 - [ ] Paper prototype (or throwaway digital one) of the core duel: cast, cooldown, affliction, hidden health. No reserve or swaps yet.
@@ -346,7 +348,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element is a tentative "Endurer": slower build-up, Burn prevention while Overloaded; guardrails accepted: prevention takes a cast slot and never stops the meter rising (partial-only still proposed); "affliction effect" defined as an element's whole per-zone profile, with §5.3 as the default; Burn starts at Charged for Offensive and Overloaded for Defensive, both empowered from Charged (tentative); passive growth starts at Overloaded for both elements; Accelerant rejected; Burn scales with the meter's value: +1 per 2 points from its start, ×2 in Overloaded, ×3 at max, applied as steeper steps rather than to the whole Burn (tentative tuning knob, Q-003); Reservoir rejected (Q-018); burnout backup dropped (its reset lowered affliction). Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
+| 0.5 | 2026-10-31 | 5 | **Process:** files moved to `docs/`; open questions get stable IDs (Q-001 to Q-019); glossary is the term registry; experience goals per pillar (§2.1, proposed); §9 is a risk register with triggers (proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. **Game:** every game term is a working name; no finishers (spell power is a sliding scale); renames for Burn and the zones deferred (Q-019); overcasting out of the glossary (Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); burnout dropped; transfer replaced by some elements raising the opponent's affliction. "Affliction effect" is an element's whole per-zone profile, with §5.3 as the default. Defensive element is a tentative Endurer (slow build-up, Burn prevention while Overloaded, which takes a cast slot and never stops the meter rising). Burn starts at Charged for Offensive and Overloaded for Defensive, both empowered from Charged (tentative); passive growth from Overloaded for both. Burn scales with the meter's value in steeper steps (tentative tuning knob). Rejected: Reservoir, Accelerant, Exposure, Frenzy, whole-Burn multiplier. |
 
 ## Appendix: glossary (term registry)
 
