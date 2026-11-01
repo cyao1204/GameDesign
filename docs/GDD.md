@@ -201,11 +201,16 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 | Element | Personality | Affliction effect | Special role | Status |
 |---|---|---|---|---|
 | Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] (Q-018) | Big rewards at high affliction | starter, decided |
-| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Endures affliction instead of removing it (candidates below the table) | starter, decided |
+| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Endurer (tentative): slow affliction build-up, Burn prevention while Overloaded | starter, decided |
 
-**Defensive element under the no-lowering rule** (session 5). **[OPEN]** (Q-018) Chris's candidate ideas:
-- Its spells build affliction **much more slowly**.
-- Some spells **prevent Burn as a secondary effect** while the caster is Overloaded. The meter still rises; only the health loss is softened.
+**Defensive element under the no-lowering rule** (session 5)
+- **[TENTATIVE]** **Endurer** (session 5, subject to change after playtesting the starter spells). The Defensive element endures affliction instead of removing it:
+  - Its spells build affliction **much more slowly** than the Offensive element's.
+  - Some spells **prevent Burn as a secondary effect** while the caster is Overloaded. The meter still rises; only the health loss is softened.
+  - Identity: the Offensive player races Overloaded; the Defensive player survives in it.
+- **[PROPOSED]** Guardrails so Burn prevention doesn't become a cleanse in disguise: it blocks only part of the Burn, it rides on a spell that takes a cast slot, and it never stops the meter rising.
+- Rejected (session 5): *Reservoir* (spells grow stronger with the affliction carried). It duplicates the Offensive element's empowered spells.
+- Playtest watch: does Endurer turn into "outlast the death clock" turtling (§6 watch above)?
 | Chaos | Rule-breaking | [DEFERRED] | Raises the opponent's affliction? Max-affliction fuel? Death-defying? | third element, decided |
 | Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
@@ -281,7 +286,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | Q-015 | Overcasting: what it is and which element owns it (§5.1) | Not blocking | Open (reopened in session 4). |
 | Q-016 | Health pool size and health cost per spell (§5.2) | Prototype | Open. |
 | Q-017 | Swap triggers (§5.4) | Not blocking | Open. Reserve and swaps are out of the first prototype. |
-| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. |
+| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. Defensive: Endurer, tentative (session 5). Offensive: still open. |
 | Q-019 | New names for **Burn** (health lost while Overloaded) and the zones **Calm / Charged / Overloaded** | Not blocking | Deferred (session 5): names parked, the concepts stay; the current names are used until then. They read as fire and lightning, but the system belongs to every element. Directions so far: body/strain, power/magic, or neutral rule names with per-element flavor. |
 
 **Deferred** (not questions yet)
@@ -308,7 +313,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element candidates: slower build-up, Burn prevention while Overloaded (Q-018); burnout backup dropped (its reset lowered affliction). Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element is a tentative "Endurer": slower build-up, Burn prevention while Overloaded, guardrails proposed; Reservoir rejected (Q-018); burnout backup dropped (its reset lowered affliction). Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
 
 ## Appendix: glossary (term registry)
 
