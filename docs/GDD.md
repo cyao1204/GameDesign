@@ -112,7 +112,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 - **[DECIDED]** **Zone boundaries are fixed and the same for everyone** (session 4, for the prototype). Both players know exactly what a meter value means.
   - Rejected: boundaries as a share of each player's hidden health. With public meters, this would reveal hidden health the moment someone crossed a boundary.
   - **[DEFERRED]** Elements shifting their own boundaries (for example, a wider Calm zone for the Defensive element, or odd zones for Chaos). A later tool for element personality.
-- **[DECIDED]** **Affliction meters are public** (session 4). They are among the few pieces of open information in the game (see §5.2). A Charged opponent visibly threatens its stronger unlocked spells, and burn damage from Overloaded is visible, so it helps deduce hidden health.
+- **[DECIDED]** **Affliction meters are public** (session 4). They are among the few pieces of open information in the game (see §5.2). A Charged opponent visibly threatens its stronger unlocked spells, and Burn damage is visible, so it helps deduce hidden health.
 
 **Meter and zones** (session 4)
 - **[DECIDED]** Each meter runs **0–20**. Spells add roughly **1–4**, scaled by power (§5.1). Exact numbers [TENTATIVE].
@@ -125,6 +125,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   | **Overloaded** | about 14 to 20 | Empowerment continues, plus affliction grows by itself each turn and burns health (the "burn while high" rule above). |
 
   Zone boundaries are [TENTATIVE].
+- **[DECIDED]** (session 5) This table is the **default profile**. Each element's affliction effect (§6) can change what a zone does, but not where it starts. For example, the Offensive element Burns from Charged (tentative).
 - **[DECIDED]** (session 5) Check pacing with a quick script before paper playtesting: casts per turn × affliction per spell against the 8–12 turn target, plus the Overloaded "death clock". Built once the starter spells have first-pass numbers (process item P-10 in `docs/design/process-research.md`).
 
 **Element afflictions (examples from session 1, not final; Fire and Frost are no longer the starter pair, see §6):**
@@ -194,14 +195,16 @@ An **experience goal** is the feeling a pillar should create in the player. It's
     2. **Empowered spells.** Some spells deal more damage at high affliction.
     3. **Overloaded transformation.** Reaching Overloaded unlocks extra effects, or changes the player's play style dramatically.
   - Watch: the transformation is the most expensive part to build and the most likely to be cut (§9). For the prototype, consider at most one simple transformation, or leave it out until unlocked spells and empowerment have been tested.
-  - Consequence: a mono-Offensive player is on a **death clock**. Once Overloaded, affliction keeps rising and burning even while resting, so they must win before it runs out. Their hidden health means the opponent can't be sure exactly when that is.
+  - Consequence: a mono-Offensive player is on a **death clock**. Burn starts at Charged (profiles below), and from Overloaded affliction also keeps rising even while resting, so they must win before it runs out. Their hidden health means the opponent can't be sure exactly when that is.
   - Watch: the Defensive player's best plan may become "outlast the clock." Check that this doesn't become dull turtling. Defensive casts also add affliction, which should help.
 - Watch: an offensive/defensive split has the same structure as fire/frost. Freshness has to come from each element's **affliction effect** and transformation, not from its name.
 
 | Element | Personality | Affliction effect | Special role | Status |
 |---|---|---|---|---|
-| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | [OPEN] (Q-018) | Big rewards at high affliction | starter, decided |
-| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | [OPEN] (Q-018) | Endurer (tentative): slow affliction build-up, Burn prevention while Overloaded | starter, decided |
+| Offensive (placeholder) | Aggressive (about 6 attack / 0 defensive / 2 utility) | Profile below; partly open (Q-018) | Big rewards at high affliction | starter, decided |
+| Defensive (placeholder) | Defensive (about 3 attack / 3 defensive / 2 utility) | Profile below; partly open (Q-018) | Endurer (tentative): slow affliction build-up, Burn prevention while Overloaded | starter, decided |
+| Chaos | Rule-breaking | [DEFERRED] | Raises the opponent's affliction? Max-affliction fuel? Death-defying? | third element, decided |
+| Lightning | — | Shaking hands | Overcasting? | session 1 example |
 
 **Defensive element under the no-lowering rule** (session 5)
 - **[TENTATIVE]** **Endurer** (session 5, subject to change after playtesting the starter spells). The Defensive element endures affliction instead of removing it:
@@ -214,8 +217,24 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   - **[PROPOSED]** (not accepted) It blocks only part of the Burn, not all of it.
 - Rejected (session 5): *Reservoir* (spells grow stronger with the affliction carried). It duplicates the Offensive element's empowered spells.
 - Playtest watch: does Endurer turn into "outlast the death clock" turtling (§6 watch above)?
-| Chaos | Rule-breaking | [DEFERRED] | Raises the opponent's affliction? Max-affliction fuel? Death-defying? | third element, decided |
-| Lightning | — | Shaking hands | Overcasting? | session 1 example |
+
+**Affliction effects: element profiles** (session 5)
+- **[DECIDED]** An element's **affliction effect** is its whole **profile**: everything its affliction does to the caster in each zone, good and bad (build rate, empowerment, unlocks, Burn, transformation). The §5.3 zone table is the default profile. A profile can change what happens in a zone, but never the zone boundaries (§5.3).
+- **[TENTATIVE]** **Burn starts in a different zone per element:** at Charged for the Offensive element, at Overloaded for the Defensive element.
+- **[TENTATIVE]** **Both elements are empowered from Charged.** The trade-off is speed. The Defensive element builds slowly, so it reaches empowerment later and may not get to cast its stronger spell effects. The Offensive element gets there early but loses health to Burn from then on.
+- **[OPEN]** (Q-018) Offensive passive growth: does it also start at Charged, or stay at Overloaded?
+- **[OPEN]** (Q-018) **Accelerant** for the Offensive element: each cast at Charged or higher adds 1 extra affliction. Chris prefers it to the other options offered (*Exposure*: take more damage at high affliction; *Frenzy*: can't rest while Overloaded), still exploring.
+
+  | Zone | Offensive | Defensive |
+  |---|---|---|
+  | All zones | Builds affliction fast. | Builds affliction much more slowly (Endurer). |
+  | Calm | No effect. | No effect. |
+  | Charged | Empowerment and unlocked spells. **Burn starts.** | Empowerment. No Burn. |
+  | Overloaded | Empowerment and unlocks continue; transformation; passive growth; Burn continues. | Empowerment continues; passive growth and **Burn start**; Burn-prevention spells work. |
+
+- Each meter follows its own element's profile. A two-element player can be losing health to an Offensive meter at Charged while their Defensive meter at Charged costs nothing.
+- Watch: the Offensive element Burns from about 8 of 20, so its death clock starts much earlier. The pacing script (P-10) must check that this doesn't end matches before turn 8.
+- Watch: the Defensive element's Charged zone is a long, Burn-free, empowered window, which adds to the turtling risk. Its Charged empowerment should push it to attack, not to wait.
 
 ## 7. Core loop (draft)
 
@@ -289,7 +308,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | Q-015 | Overcasting: what it is and which element owns it (§5.1) | Not blocking | Open (reopened in session 4). |
 | Q-016 | Health pool size and health cost per spell (§5.2) | Prototype | Open. |
 | Q-017 | Swap triggers (§5.4) | Not blocking | Open. Reserve and swaps are out of the first prototype. |
-| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. Defensive: Endurer, tentative (session 5). Offensive: still open. |
+| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. Session 5: an affliction effect is the element's whole per-zone profile. Defensive: Endurer, Burn from Overloaded (tentative). Offensive: Burn from Charged (tentative); passive growth start and Accelerant still open. Both empowered from Charged (tentative). |
 | Q-019 | New names for **Burn** (health lost while Overloaded) and the zones **Calm / Charged / Overloaded** | Not blocking | Deferred (session 5): names parked, the concepts stay; the current names are used until then. They read as fire and lightning, but the system belongs to every element. Directions so far: body/strain, power/magic, or neutral rule names with per-element flavor. |
 
 **Deferred** (not questions yet)
@@ -316,7 +335,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.2 | 2026-10-29 | 2 | Format: card duel (tactics dropped). Pillar 1 decided. Cooldowns, spell cap, no draw, prepared spells plus hidden reserve. Separate health and affliction meters, one meter per element, max two elements. Threshold growth and burn. Direct damage. Transfer demoted from core. Hidden health tied to spellbook size. Simultaneous play tentative. Draft core loop. |
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
-| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element is a tentative "Endurer": slower build-up, Burn prevention while Overloaded; guardrails accepted: prevention takes a cast slot and never stops the meter rising (partial-only still proposed); Reservoir rejected (Q-018); burnout backup dropped (its reset lowered affliction). Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
+| 0.5 (pending) | 2026-10-31 | 5 | In progress. Process setup: moved files to `docs/`; open questions get stable IDs (Q-001 to Q-018), with Q-013 experience goals, Q-015 overcasting, Q-016 health pool, Q-017 swap triggers and Q-018 element affliction effects newly listed; glossary is now the official term registry, with game terms added; experience goals per pillar added (§2.1, proposed); §9 is a risk register with mitigation and trigger (triggers proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. Terms: every game term is a working name and can change; no finishers (spell power is a sliding scale); Burn and the zone names to be renamed later (Q-019, deferred; concepts unchanged); overcasting taken out of the glossary (still an idea, Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); Defensive element is a tentative "Endurer": slower build-up, Burn prevention while Overloaded; guardrails accepted: prevention takes a cast slot and never stops the meter rising (partial-only still proposed); "affliction effect" defined as an element's whole per-zone profile, with §5.3 as the default; Burn starts at Charged for Offensive and Overloaded for Defensive, both empowered from Charged (tentative); Accelerant and Offensive passive-growth start open; Reservoir rejected (Q-018); burnout backup dropped (its reset lowered affliction). Transfer replaced: some elements' offence raises the opponent's affliction; the caster's affliction is never moved. |
 
 ## Appendix: glossary (term registry)
 
@@ -326,9 +345,10 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Active spells:** the spells in a player's active slots, usable from turn one (§5.4).
 - **Affliction:** the cost of casting. Each cast adds affliction of the spell's element to the caster (§5.3).
 - **Affliction meter:** one per element, 0–20, public (§5.3).
-- **Burn:** health lost each turn while Overloaded (§5.3). To be renamed later (Q-019, deferred).
+- **Affliction effect:** an element's whole profile: what its affliction does to the caster in each zone, good and bad (§6).
+- **Burn:** health lost each turn at high affliction. By default it starts at Overloaded; for the Offensive element, at Charged (§5.3, §6). To be renamed later (Q-019, deferred).
 - **Calm / Charged / Overloaded:** the three zones of an affliction meter (§5.3). To be renamed later (Q-019, deferred).
-- **Death clock:** a mono-Offensive player's limited time once Overloaded, since affliction keeps rising and burning (§6).
+- **Death clock:** a mono-Offensive player's limited time once Burn starts, since affliction never goes down and keeps costing health (§6).
 - **Reserve:** spells in the spellbook but not in the active slots, hidden until swapped in (§5.4).
 - **Resting:** leaving a cast slot empty to take 1 turn off a chosen spell's cooldown (§5.1).
 - **Speed category:** when a spell resolves. Self-targeted spells are *defensive* (fast); opponent-targeted spells are *offensive* (slow) (§5.5).
