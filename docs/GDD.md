@@ -198,6 +198,20 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   | Defensive | 3 | 3 | 2 |
 
   - **[DECIDED]** (session 6) The Offensive mix is **6 attack / 0 defensive / 2 utility**, 8 spells in all (as in §5.4). The Defensive mix is still tentative.
+- Consequences:
+  - A mono-Offensive player has no protection except utility and resting. That makes it a pure race, and it gives players a reason to pair it with a second element. This supports the one-vs-two element trade-off above.
+  - With only 3 attack spells, the Defensive element's attacks may need to hit harder, cost less affliction or have shorter cooldowns to threaten a kill. To be tuned.
+- **[DECIDED]** The **Offensive element can never lower its own affliction** (session 4; since session 5 no element can, §5.3). Its identity is that it gets **significant rewards for high affliction**: spells that are empowered in the Charged or Overloaded zones (§5.3).
+  - **[DECIDED]** (session 6) The reward has **two parts**:
+    1. **Main: empowered spells.** Once the meter is over a threshold, **certain spells become empowered**. Every spell can always be cast; empowerment only makes it stronger. *Session 6: "unlocks" are removed and rolled into empowerment. Supersedes the session-4 mix "led by unlocks" (spells castable only at Charged), and the short-lived session-6 "unlocked effects".*
+       - **[DECIDED]** (session 6) **The threshold is a zone, set per spell.** There are no per-spell numbers. Each empowered spell is either:
+         - **Empowered from Charged.** These spells can gain **additional effects** once the caster is Overloaded (a second step), or
+         - **Empowered from Overloaded** only.
+       - **[DECIDED]** (session 6) **What empowerment does depends on the spell.** It can be bigger numbers, a new effect, or anything else that fits the spell.
+    2. **Overloaded transformation.** **[DECIDED]** (session 6) The transformation **is** the extra step that Charged-empowered spells gain at Overloaded. There is no separate transformation of the player. Together, those steps should change how the player plays once Overloaded. *Supersedes the session-4 idea of a separate transformation, and resolves the overlap noted earlier this session.*
+  - Watch: every Charged-empowered spell with an Overloaded step adds a rule to learn (§9). For the prototype, keep the steps few and simple.
+  - Consequence: a mono-Offensive player is on a **death clock**. Burn starts at Charged (profiles below), and from Overloaded affliction also keeps rising even while resting, so they must win before it runs out. Their hidden health means the opponent can't be sure exactly when that is.
+  - Watch: the Defensive player's best plan may become "outlast the clock." Check that this doesn't become dull turtling. Defensive casts also add affliction, which should help.
 
 **Offensive element: spell list** (session 6)
 - **[DECIDED]** The 8 spells are sorted by **power tier** (cheap, medium, strong). A spell's tier sets its affliction cost and cooldown band (§5.1); exact numbers are still open (Q-003).
@@ -210,22 +224,15 @@ An **experience goal** is the feeling a pillar should create in the player. It's
 
   - Why no strong utility: this is the Offensive element, so its strongest spells are attacks.
   - Why tiers: they let playtests check whether a player ever picks a weaker spell because of affliction (experience goal "Tension", §2.1) and whether everyone just takes the strongest spells ("Flat spell cost" risk, §9).
+- **[TENTATIVE]** (session 6) **Not every spell is empowered**: about 5 of the 8. The plain spells stay simple and predictable, and choosing which empowered spells to bring becomes part of deckbuilding.
 
-- Consequences:
-  - A mono-Offensive player has no protection except utility and resting. That makes it a pure race, and it gives players a reason to pair it with a second element. This supports the one-vs-two element trade-off above.
-  - With only 3 attack spells, the Defensive element's attacks may need to hit harder, cost less affliction or have shorter cooldowns to threaten a kill. To be tuned.
-- **[DECIDED]** The **Offensive element can never lower its own affliction** (session 4; since session 5 no element can, §5.3). Its identity is that it gets **significant rewards for high affliction**: spells that are empowered in the Charged or Overloaded zones (§5.3).
-  - **[DECIDED]** (session 6) The reward has **two parts**:
-    1. **Main: empowered spells.** Once the meter is over a threshold, **certain spells become empowered**. Every spell can always be cast; empowerment only makes it stronger. *Session 6: "unlocks" are removed and rolled into empowerment. Supersedes the session-4 mix "led by unlocks" (spells castable only at Charged), and the short-lived session-6 "unlocked effects".*
-       - **[DECIDED]** (session 6) **The threshold is a zone, set per spell.** There are no per-spell numbers. Each empowered spell is either:
-         - **Empowered from Charged.** These spells can gain **additional effects** once the caster is Overloaded (a second step), or
-         - **Empowered from Overloaded** only.
-       - **[DECIDED]** (session 6) **What empowerment does depends on the spell.** It can be bigger numbers, a new effect, or anything else that fits the spell.
-       - Watch: the Overloaded second step and the Overloaded transformation (below) both add effects at Overloaded. They need to feel different, or one should be cut (complexity budget, §9).
-    2. **Overloaded transformation.** Reaching Overloaded adds extra effects, or changes the player's play style dramatically.
-  - Watch: the transformation is the most expensive part to build and the most likely to be cut (§9). For the prototype, consider at most one simple transformation, or leave it out until empowerment has been tested.
-  - Consequence: a mono-Offensive player is on a **death clock**. Burn starts at Charged (profiles below), and from Overloaded affliction also keeps rising even while resting, so they must win before it runs out. Their hidden health means the opponent can't be sure exactly when that is.
-  - Watch: the Defensive player's best plan may become "outlast the clock." Check that this doesn't become dull turtling. Defensive casts also add affliction, which should help.
+  | | Cheap | Medium | Strong | Total |
+  |---|---|---|---|---|
+  | Empowered (about) | 1 | 2 | 2 | 5 |
+  | Plain | 2 | 1 | 0 | 3 |
+
+  - Still open: which spells (attack or utility) are empowered, and whether each one starts at Charged or Overloaded.
+
 - Watch: an offensive/defensive split has the same structure as fire/frost. Freshness has to come from each element's **affliction effect** and transformation, not from its name.
 
 | Element | Personality | Affliction effect | Special role | Status |
@@ -337,7 +344,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | Q-015 | Overcasting: what it is and which element owns it (§5.1) | Not blocking | Open (reopened in session 4). |
 | Q-016 | Health pool size and health cost per spell (§5.2) | Prototype | Open. |
 | Q-017 | Swap triggers (§5.4) | Not blocking | Open. Reserve and swaps are out of the first prototype. |
-| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. Session 5: an affliction effect is the element's whole per-zone profile. Defensive: Endurer, Burn from Overloaded (tentative). Offensive: Burn from Charged (tentative); passive growth from Overloaded (decided); Accelerant rejected. Both empowered from Charged (tentative). Session 6: each empowered spell is empowered from Charged (with a possible Overloaded step) or only from Overloaded; its effect differs per spell. Still open: the per-element empowerments and spells (with Q-002). |
+| Q-018 | Each starter element's affliction effect (§6) | Prototype | Open. Needed together with Q-002. Session 5: an affliction effect is the element's whole per-zone profile. Defensive: Endurer, Burn from Overloaded (tentative). Offensive: Burn from Charged (tentative); passive growth from Overloaded (decided); Accelerant rejected. Both empowered from Charged (tentative). Session 6: each empowered spell is empowered from Charged (with a possible Overloaded step) or only from Overloaded; its effect differs per spell. The Overloaded transformation is the Overloaded step of Charged-empowered spells. About 5 of 8 Offensive spells empowered (tentative). Still open: the per-element empowerments and spells (with Q-002). |
 | Q-019 | New names for **Burn** (health lost while Overloaded) and the zones **Calm / Charged / Overloaded** | Not blocking | Deferred (session 5): names parked, the concepts stay; the current names are used until then. They read as fire and lightning, but the system belongs to every element. Directions so far: body/strain, power/magic, or neutral rule names with per-element flavor. |
 
 **Deferred** (not questions yet)
@@ -367,7 +374,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
 | 0.5 | 2026-10-31 | 5 | **Process:** files moved to `docs/`; open questions get stable IDs (Q-001 to Q-019); glossary is the term registry; experience goals per pillar (§2.1, proposed); §9 is a risk register with triggers (proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. **Game:** every game term is a working name; no finishers (spell power is a sliding scale); renames for Burn and the zones deferred (Q-019); overcasting out of the glossary (Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); burnout dropped; transfer replaced by some elements raising the opponent's affliction. "Affliction effect" is an element's whole per-zone profile, with §5.3 as the default. Defensive element is a tentative Endurer (slow build-up, Burn prevention while Overloaded, which takes a cast slot and never stops the meter rising). Burn starts at Charged for Offensive and Overloaded for Defensive, both empowered from Charged (tentative); passive growth from Overloaded for both. Burn scales with the meter's value in steeper steps (tentative tuning knob). Rejected: Reservoir, Accelerant, Exposure, Frenzy, whole-Burn multiplier. |
-| 0.6 (pending) | 2026-11-01 | 6 | In progress. Offensive element: 8 spells, 6 attack / 2 utility (decided), sorted by power tier (attack 2/2/2, utility 1/1/0); power tier added to the glossary. Unlocks removed and rolled into empowerment: past a threshold, certain spells become empowered, and every spell can always be cast (§5.3, §6, §7, §9, §11); empowered spell added to the glossary. Empowerment threshold is a zone set per spell: from Charged (with a possible extra step at Overloaded) or only from Overloaded; what empowerment does differs per spell. |
+| 0.6 (pending) | 2026-11-01 | 6 | In progress. Offensive element: 8 spells, 6 attack / 2 utility (decided), sorted by power tier (attack 2/2/2, utility 1/1/0); power tier added to the glossary. Unlocks removed and rolled into empowerment: past a threshold, certain spells become empowered, and every spell can always be cast (§5.3, §6, §7, §9, §11); empowered spell added to the glossary. Empowerment threshold is a zone set per spell: from Charged (with a possible extra step at Overloaded) or only from Overloaded; what empowerment does differs per spell. The Overloaded transformation is the extra step Charged-empowered spells gain at Overloaded (no separate player transformation). About 5 of the 8 Offensive spells are empowered (tentative: 1 cheap, 2 medium, 2 strong). |
 
 ## Appendix: glossary (term registry)
 
@@ -382,6 +389,7 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Calm / Charged / Overloaded:** the three zones of an affliction meter (§5.3). To be renamed later (Q-019, deferred).
 - **Empowered spell:** a spell that becomes stronger while its element's meter is in its zone: from Charged (with a possible further step at Overloaded) or only from Overloaded. What empowerment does differs per spell. The spell can be cast in any zone (§6). Replaces the session-4 idea of "unlocked" spells.
 - **Death clock:** a mono-Offensive player's limited time once Burn starts, since affliction never goes down and keeps costing health (§6).
+- **Overloaded transformation:** the extra effects that Charged-empowered spells gain once the caster is Overloaded. Not a separate change to the player (§6).
 - **Reserve:** spells in the spellbook but not in the active slots, hidden until swapped in (§5.4).
 - **Resting:** leaving a cast slot empty to take 1 turn off a chosen spell's cooldown (§5.1).
 - **Speed category:** when a spell resolves. Self-targeted spells are *defensive* (fast); opponent-targeted spells are *offensive* (slow) (§5.5).
