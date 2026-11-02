@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | **Designer** | Chris (solo, building with Claude) |
-| **Last updated** | 2026-10-31 (session 5) |
+| **Last updated** | 2026-11-01 (session 6, in progress) |
 | **Phase** | End of concept → starting pre-production (prototyping) |
-| **Version** | 0.5 |
+| **Version** | 0.5 (0.6 pending: bumped at the end of session 6) |
 
 **How to read this doc.** Every rule is tagged with its status:
 
@@ -197,6 +197,20 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   | Offensive | 6 | 0 | 2 |
   | Defensive | 3 | 3 | 2 |
 
+  - **[DECIDED]** (session 6) The Offensive mix is **6 attack / 0 defensive / 2 utility**, 8 spells in all (as in §5.4). The Defensive mix is still tentative.
+
+**Offensive element: spell list** (session 6)
+- **[DECIDED]** The 8 spells are sorted by **power tier** (cheap, medium, strong). A spell's tier sets its affliction cost and cooldown band (§5.1); exact numbers are still open (Q-003).
+
+  | Role | Cheap | Medium | Strong | Total |
+  |---|---|---|---|---|
+  | Attack | 2 | 2 | 2 | 6 |
+  | Utility | 1 | 1 | 0 | 2 |
+  | **Total** | **3** | **3** | **2** | **8** |
+
+  - Why no strong utility: this is the Offensive element, so its strongest spells are attacks.
+  - Why tiers: they let playtests check whether a player ever picks a weaker spell because of affliction (experience goal "Tension", §2.1) and whether everyone just takes the strongest spells ("Flat spell cost" risk, §9).
+
 - Consequences:
   - A mono-Offensive player has no protection except utility and resting. That makes it a pure race, and it gives players a reason to pair it with a second element. This supports the one-vs-two element trade-off above.
   - With only 3 attack spells, the Defensive element's attacks may need to hit harder, cost less affliction or have shorter cooldowns to threaten a kill. To be tuned.
@@ -303,7 +317,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | ID | Question | Needed by | Status |
 |---|---|---|---|
 | Q-001 | Turn structure | Prototype | Resolved (session 4): secret choice resolved by speed category, speed set by target. Alternating dropped. |
-| Q-002 | Two starter elements and their 6–8 spells each | Prototype | Open. Archetypes decided (one Offensive, one Defensive); roles and spells still open. |
+| Q-002 | Two starter elements and their 6–8 spells each | Prototype | Open. Archetypes decided (one Offensive, one Defensive). Session 6: Offensive has 8 spells, 6 attack / 2 utility, by power tier: attack 2 cheap / 2 medium / 2 strong, utility 1 cheap / 1 medium. Spell effects and the Defensive list still open. |
 | Q-003 | Affliction numbers: threshold, growth rate, health cost per turn, at least one way to reduce affliction | Prototype | Open. Decided so far: affliction per cast scales with spell power; 0–20 meter with Calm / Charged / Overloaded zones; no element can lower affliction (session 5), so the "way to reduce affliction" part is dropped. Burn scales with the meter's value (tentative, session 5): +1 per 2 points from where it starts, steps worth 2 in Overloaded and 3 at max ("steeper steps"). Still open: exact numbers, including how much more slowly the Defensive element builds (Q-018). |
 | Q-004 | Threshold placement | Prototype | Resolved (session 4): fixed boundaries, the same for everyone. Element-shifted boundaries deferred. |
 | Q-005 | Spells per turn | Prototype | Resolved (session 4): up to 2–3, exact value to tune; empty slots rest. |
@@ -349,6 +363,7 @@ Every open question has a stable ID. IDs are never reused or renumbered. Cite th
 | 0.3 | 2026-10-30 | 3 | Consolidated into this living GDD. Added proposed pillars 2–3, the turn-structure inconsistency flag, hidden-health feedback and opponent-scope risks, and the pre-prototype vs. pre-development question split. No new decisions. |
 | 0.4 | 2026-10-30 | 4 | Answered the pre-prototype questions. Turn structure: secret choice, self-targeted spells resolve first and opponent-targeted last (tentative); alternating dropped; resolves the session-2 ⚠. Up to 2–3 spells per turn; an empty slot takes 1 turn off a chosen spell's cooldown; stronger spells have longer cooldowns and cost more affliction. Match length 8–12 turns (tentative). Starter elements: one Offensive (6/0/2 mix, can't lower its own affliction, rewarded with finishers, empowerment and an Overloaded transformation) and one Defensive (3/3/2); placeholder names; Fire + Frost rejected. Chaos is the rule-breaking third element (deferred). Health = pool − all spells in the book; terms changed to spellbook / active / reserve; prototype at 8 spells per element and 4–5 active slots. Affliction meter 0–20 with fixed Calm / Charged / Overloaded zones; meters and all cast spells are public. Double knockout: lower total affliction wins. Overcasting reopened; transfer-meter question deferred. Version is now bumped once per session. |
 | 0.5 | 2026-10-31 | 5 | **Process:** files moved to `docs/`; open questions get stable IDs (Q-001 to Q-019); glossary is the term registry; experience goals per pillar (§2.1, proposed); §9 is a risk register with triggers (proposed); pacing check decided, built after the starter spells (P-10); Q-014 proposed to move earlier; research record in `docs/design/process-research.md`. **Game:** every game term is a working name; no finishers (spell power is a sliding scale); renames for Burn and the zones deferred (Q-019); overcasting out of the glossary (Q-015). Affliction can never be lowered or cleansed (supersedes "lowering is an element ability"); burnout dropped; transfer replaced by some elements raising the opponent's affliction. "Affliction effect" is an element's whole per-zone profile, with §5.3 as the default. Defensive element is a tentative Endurer (slow build-up, Burn prevention while Overloaded, which takes a cast slot and never stops the meter rising). Burn starts at Charged for Offensive and Overloaded for Defensive, both empowered from Charged (tentative); passive growth from Overloaded for both. Burn scales with the meter's value in steeper steps (tentative tuning knob). Rejected: Reservoir, Accelerant, Exposure, Frenzy, whole-Burn multiplier. |
+| 0.6 (pending) | 2026-11-01 | 6 | In progress. Offensive element: 8 spells, 6 attack / 2 utility (decided), sorted by power tier (attack 2/2/2, utility 1/1/0); power tier added to the glossary. |
 
 ## Appendix: glossary (term registry)
 
@@ -376,6 +391,7 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Design pillar:** a short statement that defines the game and filters features.
 - **Experience goal:** the feeling a pillar should create in the player; the "Aesthetics" of MDA (§2.1).
 - **MDA:** Mechanics (rules) → Dynamics (behavior) → Aesthetics (feelings).
+- **Power tier:** how strong a spell is: cheap, medium or strong. Stronger tiers cost more affliction and have longer cooldowns (§5.1, §6). *(Listed under design jargon for now; it is a design label, not a rule players see.)*
 - **Pre-production:** the phase of cheap prototypes to "find the fun" before building the real game.
 - **Push-your-luck:** you choose how much risk to take (Blackjack).
 - **Risk register:** a list of risks, each with a mitigation and a trigger for action (§9).
