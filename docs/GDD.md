@@ -432,10 +432,10 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Burst:** an attack that deals all its damage at once, when it resolves (§6).
 - **Burn:** health lost each turn at high affliction. By default it starts at Overloaded; for the Offensive element, at Charged (§5.3, §6). To be renamed later (Q-019, deferred).
 - **Calm / Charged / Overloaded:** the three zones of an affliction meter (§5.3). To be renamed later (Q-019, deferred).
+- **Capacitor:** working name of a medium Offensive attack that deals damage equal to the affliction gained since it was last cast (§6).
 - **Empowered spell:** a spell that becomes stronger while its element's meter is in its zone: from Charged (with a possible further step at Overloaded) or only from Overloaded. What empowerment does differs per spell. The spell can be cast in any zone (§6). Replaces the session-4 idea of "unlocked" spells.
 - **Damage over time:** an attack that deals its damage spread over several turns (§6).
 - **Death clock:** a mono-Offensive player's limited time once Burn starts, since affliction never goes down and keeps costing health (§6).
-- **Capacitor:** working name of a medium Offensive attack that deals damage equal to the affliction gained since it was last cast (§6).
 - **Lockdown:** working name of a strong Offensive attack that deals damage and puts one of the opponent's revealed spells on cooldown, or lengthens its cooldown (§6).
 - **Overloaded transformation:** the extra effects that Charged-empowered spells gain once the caster is Overloaded. Not a separate change to the player (§6).
 - **Overcommit:** working name of a medium Offensive attack that recasts itself every turn, taking a cast slot, until the caster breaks it (§6).
