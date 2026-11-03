@@ -426,19 +426,19 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 
 **Game terms** (working names)
 - **Active spells:** the spells in a player's active slots, usable from turn one (§5.4).
-- **Affliction:** the cost of casting. Each cast adds affliction of the spell's element to the caster (§5.3).
-- **Affliction meter:** one per element, 0–20, public (§5.3).
 - **Affliction effect:** an element's whole profile: what its affliction does to the caster in each zone, good and bad (§6).
-- **Burst:** an attack that deals all its damage at once, when it resolves (§6).
+- **Affliction meter:** one per element, 0–20, public (§5.3).
+- **Affliction:** the cost of casting. Each cast adds affliction of the spell's element to the caster (§5.3).
 - **Burn:** health lost each turn at high affliction. By default it starts at Overloaded; for the Offensive element, at Charged (§5.3, §6). To be renamed later (Q-019, deferred).
+- **Burst:** an attack that deals all its damage at once, when it resolves (§6).
 - **Calm / Charged / Overloaded:** the three zones of an affliction meter (§5.3). To be renamed later (Q-019, deferred).
 - **Capacitor:** working name of a medium Offensive attack that deals damage equal to the affliction gained since it was last cast (§6).
-- **Empowered spell:** a spell that becomes stronger while its element's meter is in its zone: from Charged (with a possible further step at Overloaded) or only from Overloaded. What empowerment does differs per spell. The spell can be cast in any zone (§6). Replaces the session-4 idea of "unlocked" spells.
 - **Damage over time:** an attack that deals its damage spread over several turns (§6).
 - **Death clock:** a mono-Offensive player's limited time once Burn starts, since affliction never goes down and keeps costing health (§6).
+- **Empowered spell:** a spell that becomes stronger while its element's meter is in its zone: from Charged (with a possible further step at Overloaded) or only from Overloaded. What empowerment does differs per spell. The spell can be cast in any zone (§6). Replaces the session-4 idea of "unlocked" spells.
 - **Lockdown:** working name of a strong Offensive attack that deals damage and puts one of the opponent's revealed spells on cooldown, or lengthens its cooldown (§6).
-- **Overloaded transformation:** the extra effects that Charged-empowered spells gain once the caster is Overloaded. Not a separate change to the player (§6).
 - **Overcommit:** working name of a medium Offensive attack that recasts itself every turn, taking a cast slot, until the caster breaks it (§6).
+- **Overloaded transformation:** the extra effects that Charged-empowered spells gain once the caster is Overloaded. Not a separate change to the player (§6).
 - **Pact:** proposed working name of a strong Offensive attack that sets a goal to gain a set amount of affliction within a set number of turns; met, it deals damage; missed, it adds affliction (§6).
 - **Reserve:** spells in the spellbook but not in the active slots, hidden until swapped in (§5.4).
 - **Resting:** leaving a cast slot empty to take 1 turn off a chosen spell's cooldown (§5.1).
