@@ -431,6 +431,7 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Death clock:** a mono-Offensive player's limited time once Burn starts, since affliction never goes down and keeps costing health (§6).
 - **Lockdown:** working name of a strong Offensive attack that deals damage and puts one of the opponent's revealed spells on cooldown, or lengthens its cooldown (§6).
 - **Overloaded transformation:** the extra effects that Charged-empowered spells gain once the caster is Overloaded. Not a separate change to the player (§6).
+- **Pact:** proposed working name of a strong Offensive attack that sets a goal to gain a set amount of affliction within a set number of turns; met, it deals damage; missed, it adds affliction (§6).
 - **Reserve:** spells in the spellbook but not in the active slots, hidden until swapped in (§5.4).
 - **Resting:** leaving a cast slot empty to take 1 turn off a chosen spell's cooldown (§5.1).
 - **Speed category:** when a spell resolves. Self-targeted spells are *defensive* (fast); opponent-targeted spells are *offensive* (slow) (§5.5).
@@ -445,7 +446,6 @@ The current word list (see "Terms" at the top). Game terms are **working names**
 - **Design pillar:** a short statement that defines the game and filters features.
 - **Experience goal:** the feeling a pillar should create in the player; the "Aesthetics" of MDA (§2.1).
 - **MDA:** Mechanics (rules) → Dynamics (behavior) → Aesthetics (feelings).
-- **Pact:** proposed working name of a strong Offensive attack that sets a goal to gain a set amount of affliction within a set number of turns; met, it deals damage; missed, it adds affliction (§6).
 - **Power tier:** how strong a spell is: cheap, medium or strong. Stronger tiers cost more affliction and have longer cooldowns (§5.1, §6). *(Listed under design jargon for now; it is a design label, not a rule players see.)*
 - **Pre-production:** the phase of cheap prototypes to "find the fun" before building the real game.
 - **Push-your-luck:** you choose how much risk to take (Blackjack).
