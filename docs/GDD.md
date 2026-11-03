@@ -121,7 +121,7 @@ An **experience goal** is the feeling a pillar should create in the player. It's
   - *Fills the gap left when burnout was dropped in session 5.*
   - **[DECIDED]** (session 6, answers Q-022) **Edge cases:**
     1. **Both players go over the maximum on the same turn:** the player with **more health left** wins. If health is tied, the player with **less total affliction** wins. If that is tied too, the player with **fewer spells in their spellbook** (active + reserve) wins.
-       - If all three are tied, the player who **rested the least** over the match wins (fewest empty cast slots, by the glossary meaning of resting). If that is tied too, the match is a **draw**.
+       - If all three are tied, the player who **rested the least** over the match wins (counted in empty cast slots, not turns; confirmed by Chris). If that is tied too, the match is a **draw**.
     2. **One player goes over the maximum on a turn when both players reach 0 health:** that player loses.
     3. Otherwise, when both players reach 0 health, the tiebreak stays **less total affliction** (§5.5).
 - **[DECIDED]** The meter has three **zones** instead of a single threshold:
